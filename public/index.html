@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Сохраняя экосистемы" />
+    <meta property="og:description" content="Интерактивный проект об экологических проектах «Норникеля» по сохранению устойчивости экосистем.">
+    <meta name = "description" content = "Интерактивный проект об экологических проектах «Норникеля» по сохранению устойчивости экосистем.">  
+    <meta property="og:image" content = "https://life.nornickel.ru/img/opengraph-telegram.jpg">
+    <meta name = "twitter:card" content = "summary_large_image" >  
+    <title>Сохраняя экосистемы</title>
+    
+    <!-- <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]function(){(m[i].a=m[i].a[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(95434301, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/95434301" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
+    <!-- /Yandex.Metrika counter -->
+    <script>
+      let head = document.head
+      if(document.location.pathname === '/') {  
+        let link = document.createElement('link');
+          link.rel = 'preload';
+          // link.href = 'img/hero-main.webp';
+          link.href = 'img/video/main.mp4';
+          link.as = 'image';
+          head.appendChild(link)
+      }
+    </script>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="preload" href="img/loader.gif" as="image">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
