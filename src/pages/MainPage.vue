@@ -29,14 +29,19 @@
                     :class="[`main-page__map-item-${item.id}`, isBig(item.big), isActive(item)]">
                     <div class="main-page__map-item-time">{{ item.time }}</div>
                     <div class="main-page__map-item-title" v-html="item.title"></div>
-                    <picture>
-                        <source media="(max-width: 768px)" :srcset="`img/main-map-${item.id}-mobile-active.jpg`">
-                        <img :src="`img/main-map-${item.id}-active.jpg`" alt="">
-                    </picture>
+
+                    <video v-if="!isMobile && isActive(item) && item.id !== 1" autoplay loop muted playsinline class="main-page__map-video" :class="`main-page__map-video-${item.id}`">
+                        <source :src="`video/map-${item.id}.mp4`" type="video/mp4">
+                    </video>
 
                     <picture>
+                        <source media="(max-width: 768px)" :srcset="`img/main-map-${item.id}-mobile-active.jpg`">
+                        <img loading="lazy" :src="`img/main-map-${item.id}-active.jpg`" alt="">
+                    </picture>
+
+                    <picture v-if="!isActive(item)">
                         <source media="(max-width: 768px)" :srcset="`img/main-map-${item.id}-mobile.jpg`">
-                        <img class="notActive" :src="`img/main-map-${item.id}.jpg`" alt="">
+                        <img loading="lazy" class="notActive" :src="`img/main-map-${item.id}.jpg`" alt="">
                     </picture>
                 </a>
             </section>
@@ -270,7 +275,10 @@ export default {
     computed: {
         isFormIncomplete() {
             return this.formData.name.length > 0 && this.formData.mail.length > 0 && this.formData.city.length > 0 && this.formData.work.length > 0 && this.formData.age.length > 0 && this.formData.question.length > 0 && this.formData.agree;
-        }
+        },
+        isMobile() {
+            return window.innerWidth <= 768
+        },
     },
     methods: {
         isBig(item) {
@@ -304,20 +312,21 @@ export default {
 <style lang="scss">
 .main-page {
     .hero-main {
-        background-position: bottom;
-        background-image: url(../../public/img/hero-main.png);
+        // background-position: bottom;
+        // background-image: url(../../public/img/hero-main.png);
 
-        @supports (background-image: url(../../public/img/hero-main.webp)) {
-            background-image: url(../../public/img/hero-main.webp);
-        }
+        // @supports (background-image: url(../../public/img/hero-main.webp)) {
+        //     background-image: url(../../public/img/hero-main.webp);
+        // }
 
-        @media (max-width: 768px) {
-            background-image: url(../../public/img/hero-main-mobile.png);
+        // @media (max-width: 768px) {
+        //     background-position: top;
+        //     background-image: url(../../public/img/hero-main-mobile.png);
 
-            @supports (background-image: url(../../public/img/hero-main-mobile.webp)) {
-                background-image: url(../../public/img/hero-main-mobile.webp);
-            }
-        }
+        //     @supports (background-image: url(../../public/img/hero-main-mobile.webp)) {
+        //         background-image: url(../../public/img/hero-main-mobile.webp);
+        //     }
+        // }
 
         // @media (max-height: 53vw) and (min-width: 769px) {
         //     background-position: top;
@@ -485,7 +494,7 @@ export default {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                z-index: -1;
+                z-index: -2;
                 transition: all .3s ease;
             }
 
@@ -508,6 +517,49 @@ export default {
                         opacity: 0;
                     }
                 }
+            }
+        }
+
+        &-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &-10 {
+                left: 0.1rem;
+                left: 0.4rem;
+            }
+
+            &-2 {
+                top: 0.05rem;
+                left: 0.5rem;
+            }
+
+            &-3 {
+                top: 0.01rem;
+                left: 0.5rem;
+            }
+
+            &-5 {
+                top: 0.05rem;
+                left: 0.15rem;
+            }
+
+            &-6 {
+                left: 0.15rem;
+                top: -0.05rem;
+            }
+
+            &-8 {
+                left: 0.1rem;
+            }
+
+            &-9 {
+                left: 0.2rem;
+                top: 0.05rem;
             }
         }
     }

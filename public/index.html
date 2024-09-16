@@ -31,10 +31,24 @@
       if(document.location.pathname === '/') {  
         let link = document.createElement('link');
           link.rel = 'preload';
-          // link.href = 'img/hero-main.webp';
-          link.href = 'img/video/main.mp4';
+          link.href = 'img/hero-main.webp';
+          // link.href = 'img/video/main.mp4';
           link.as = 'image';
-          head.appendChild(link)
+          head.appendChild(link);
+
+          let style = document.createElement('style');
+          style.innerHTML = `
+              .hero-main {
+                  background-position: bottom;
+                  background-image: url(img/hero-main.webp);
+
+                  @media (max-width: 768px) {
+                    background-position: top;
+                    background-image: url(img/hero-main-mobile.webp);
+                  }
+              }
+          `;
+        head.appendChild(style);
       }
     </script>
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">

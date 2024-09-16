@@ -1,7 +1,7 @@
 <template>
     <div class="hero-main">
-        <video v-if="!isMobile" autoplay loop muted playsinline class="hero-main__video">
-            <source src="img/video/main.mp4" type="video/mp4">
+        <video v-if="!isMobile" autoplay loop muted playsinline class="hero-main__video" preload="auto">
+            <source src="video/main.mp4" type="video/mp4">
         </video>
         <div class="container">
             <a href="/" class="hero-main__link">
@@ -127,7 +127,6 @@ export default {
     min-height: 100vh;
     width: 100%;
     max-width: 100vw;
-    background-position: top right;
     background-size: cover;
     background-repeat: no-repeat;
 
