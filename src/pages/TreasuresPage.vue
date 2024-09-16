@@ -304,8 +304,6 @@
                     <BaseNumberBlock class="mobile-visible mb-40" :textTop="lang === 'ru' ? '3&nbsp;млн&nbsp;рублей' : 'RUB&nbsp;3&nbsp;mln'" :textBottom="lang === 'ru' ? '&laquo;Норникель&raquo; выделил на&nbsp;строительство гостевых домиков' : 'allocated by Nornickel to construct guest houses'"
                     />
     
-    
-                    <span v-if="lang === 'ru'">
                                 <p class="mb-10">
                                 При финансовой поддержке &laquo;Норникеля&raquo; и&nbsp;его дочернего предприятия&nbsp;&mdash;
                                 Кольской горно-металлургической компании (ГМК)&nbsp;&mdash; Лапландский заповедник издаёт книги
@@ -335,24 +333,6 @@
                                 дополнительно выделено 1,8&nbsp;млн рублей. Сумма ежегодных мониторинговых контрактов составляет
                                 5,253&nbsp;млн рублей.
                             </p>
-                        </span>
-                    <span v-else>
-                            <p class="mb-10">
-                                With the financial support of Nornickel and its subsidiary Kola MMC, the Lapland Nature Reserve publishes books and materials which help to raise environmental awareness. For example, the сompany allocated some RUB 1 mln to publish two books describing the lives of the scientists Herman Kreps and Oleg Semyonov-Tyan-Shansky.
-                            </p>
-                            <p class="mb-10">
-                                Nornickel’s World of New Opportunities charity programme has helped the Lapland Nature Reserve bring to life a number of projects, including the Forest Post initiative, which offers an opportunity to contact scientists and ask them questions about local plants and animals. Also, the Lapland Nature Reserve now has environmental awareness trails, with the longest one, the 14 km Circumnavigation Trail, currently under construction.
-                            </p>
-                            <p class="mb-10">
-                                In 2021, Kola MMC provided financial support to the nature reserve to acquire five snowmobiles. This provided the researchers with daily access to even the most remote parts of the protected area to make sure everything is in order, conduct research, and study plants and animals.
-                            </p>
-                            <p class="mb-10">
-                                The snowmobiles also help with the Save the Reindeer Together project, which kicked off in 2021, again with Nornickel’s support.
-                            </p>
-                            <p>
-                                Additionally, Nornickel has provided a total of RUB 1.8 mln to monitor and restore the wild reindeer population. Annual monitoring contracts signed by Nornickel total RUB 5.253 mln.
-                            </p>
-                        </span>
     
                     <BaseNumberBlock class="number-block-1 desktop-visible" :textTop="lang === 'ru' ?  '3&nbsp;млн&nbsp;рублей' : 'RUB&nbsp;3&nbsp;mln'" :textBottom="lang === 'ru' ?  '&laquo;Норникель&raquo; выделил на&nbsp;строительство гостевых домиков' : 'allocated by Nornickel to construct guest houses'"
                     />
