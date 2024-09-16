@@ -178,7 +178,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 11rem;
+        margin-bottom: 19vh;
 
         @media (max-width: 768px) {
             width: 100%;
@@ -187,8 +187,7 @@ export default {
 
     &__title {
         margin-bottom: 0.5vh;
-        // font-size: 2.25rem;
-        font-size: 5.2vh;
+        font-size: 4.9vh;
         font-weight: 600;
         line-height: 120%;
         text-transform: uppercase;
@@ -205,7 +204,7 @@ export default {
         text-align: center;
         // font-size: 1.125rem;
         width: 55vh;
-        font-size: 2.4vh;
+        font-size: 2.1vh;
         font-weight: 400;
         line-height: 120%;
         color: var(--gray-1, #333);

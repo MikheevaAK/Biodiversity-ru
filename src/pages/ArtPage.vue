@@ -639,7 +639,7 @@
                             </div>
                         </div>
 
-                        <div class="art__list-ten"></div>
+                        <div class="art__list-ten"  :class="{ 'art__list-ten-hidden': (this.blockHeight === 715) || (this.blockHeight === 76) }"></div>
 
                         <button class="art__list-button"
                             :class="{ 'art__list-button-open': (this.blockHeight === 715) || (this.blockHeight === 76) }"
@@ -1220,6 +1220,10 @@ export default {
             @media (max-width: 768px) {
                 bottom: 8rem;
                 height: 25rem;
+            }
+
+            &-hidden {
+                display: none;
             }
         }
 
