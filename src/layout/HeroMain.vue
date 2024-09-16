@@ -1,6 +1,6 @@
 <template>
     <div class="hero-main">
-        <video autoplay loop muted playsinline class="hero-main__video">
+        <video v-if="!isMobile" autoplay loop muted playsinline class="hero-main__video">
             <source src="img/video/main.mp4" type="video/mp4">
         </video>
         <div class="container">
@@ -45,7 +45,7 @@
                     </defs>
                 </svg>
             </a>
-            <div class="hero-main__wrap">
+            <div class="hero-main__wrap" v-if="!isMobile" >
                 <h1 class="hero-main__title">
                     Сохраняя экосистемы
                 </h1>
@@ -102,6 +102,9 @@ export default {
                 return 'url(' + this.imgMobile + ')'
             }
 
+        },
+        isMobile() {
+            return window.innerWidth <= 768
         },
     },
     methods: {

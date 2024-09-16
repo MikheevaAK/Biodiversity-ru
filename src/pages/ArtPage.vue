@@ -795,7 +795,7 @@ export default {
         width: 41rem !important;
 
         @media (max-width: 768px) {
-            width: unset;
+            width: unset !important;
         }
     }
 
