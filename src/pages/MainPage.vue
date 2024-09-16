@@ -280,7 +280,6 @@ export default {
             return this.store.getItem((item.link).slice(1)) ? `main-page__map-item-${item.id}_active` : ''
         },
         async submitForm() {
-            console.log(this.formData);
             try {
                 await axios.post('https://biodiversity-ru.vercel.app:30011/send-email', this.formData);
                 alert('Ваш вопрос отправлен! Спасибо!');
