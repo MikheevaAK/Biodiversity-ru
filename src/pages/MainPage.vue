@@ -30,7 +30,7 @@
                     <div class="main-page__map-item-time">{{ item.time }}</div>
                     <div class="main-page__map-item-title" v-html="item.title"></div>
 
-                    <video v-if="!isMobile && isActive(item) && item.id !== 1" autoplay loop muted playsinline class="main-page__map-video" :class="`main-page__map-video-${item.id}`">
+                    <video v-if="!isMobile && item.id !== 1" autoplay loop muted playsinline class="main-page__map-video" :class="`main-page__map-video-${item.id}`">
                         <source :src="`video/map-${item.id}.mp4`" type="video/mp4">
                     </video>
 
@@ -494,8 +494,12 @@ export default {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                z-index: -2;
+                z-index: -3;
                 transition: all .3s ease;
+
+                &.notActive {
+                    z-index: -1;
+                }
             }
 
             &-1,

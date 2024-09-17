@@ -485,6 +485,9 @@
                     <BaseCollageInfo text="Индикаторные виды" />
                 </div>
                 <div class="collage mb-100">
+                    <!-- <video v-if="!isMobile" autoplay loop muted playsinline class="collage__video" preload="auto">
+                        <source src="video/kola.mp4" type="video/mp4">
+                    </video> -->
                     <div class="collage__golden-eagle"></div>
                     <div class="collage__bluethroat"></div>
                     <BaseDropdownInfo class="golden-eagle" title="Беркут" :is-modal="true" :color="'#71464E'"
@@ -1661,6 +1664,12 @@ export default {
             @supports (background-image: url(../../public/img/kola-collage-mobile.webp)) {
                 background-image: url(../../public/img/kola-collage-mobile.webp);
             }
+        }
+
+        &__video {
+            width: 100%;
+            position: absolute;
+            right: -0.1rem;
         }
 
 
