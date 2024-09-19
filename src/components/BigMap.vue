@@ -5,7 +5,7 @@
             <source media="(max-width: 768px)" type="image/webp" :srcset="imgMobile+ '.webp'">
             <source media="(max-width: 768px)" :srcset="imgMobile+ '.png'">
             <source type="image/webp" :srcset="img+ '.webp'">
-            <img :src="img + '.png'" alt="">
+            <img loading="lazy" :src="img + '.png'" alt="">
         </picture>
         <div v-for="(circale, index) in circales" :key="index" class="map-circale" :class="{
             'map-circale__blue': circale.color === 'blue',

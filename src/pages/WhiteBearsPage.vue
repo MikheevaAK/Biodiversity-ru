@@ -335,15 +335,14 @@
                         Ближнего Востока. Российские браконьеры незаконно отлавливают этих птиц и&nbsp;отправляют
                         за&nbsp;границу.
                     </div>
-                    <picture v-if="!isLoadingOne">
-                        <source type="image/webp" srcset="img/merlin.webp">
-                        <img loading="lazy" src="img/merlin.png" alt="">
-                    </picture>
-
                     <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
                         <source src="video/merlin.mov" type="video/mp4">
                         <source src="video/merlin.webm" type="video/webm">
                     </video>
+                    <picture v-if="!isLoadingOne">
+                        <source type="image/webp" srcset="img/merlin.webp">
+                        <img loading="lazy" src="img/merlin.png" alt="">
+                    </picture>
                 </div>
 
                  

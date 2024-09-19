@@ -495,7 +495,7 @@
                     </div>
                     <picture class="division__new-ward-img">
                         <source type="image/webp" srcset="img/bug.webp">
-                        <img loading="lazy" src="img/bug.png" alt="">
+                        <img loading="lazy" src="img/bug-1.png" alt="">
                     </picture>
                 </div>
 

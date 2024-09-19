@@ -131,9 +131,9 @@
                     <BaseNumberBlock class="hidden-mobile" textTop="21 озеро" textBottom="обследовали учёные в&nbsp;ходе экспедиции" />
                 </BaseTextBlock>
                 <div class="in-search">
-                    <div class="in-search__plane"></div>
-                    <div class="in-search__gull"></div>
-                    <div class="in-search__seagulls"></div>
+                    <video v-if="!isMobile" autoplay loop muted playsinline class="in-search__video" preload="auto">
+                        <source src="video/in-search.mp4" type="video/mp4">
+                    </video>
                     <div class="in-search__fish"></div>
                     <BaseTextBlock class="hidden-mobile">
                         <p>
@@ -537,54 +537,18 @@ export default {
         },
         parallax() {
             if (window.innerWidth > 768) {
-                gsap.fromTo(".in-search__plane", { y: 200 }, {
-                    y: 0,
-                    scrollTrigger: {
-                        trigger: ".in-search-section",
-                        start: 'top 50%',
-                        end: '25%',
-                        // markers: true,
-                        scrub: true
-                    },
+                // gsap.fromTo(".in-search__fish", { x: 60 }, {
+                //     x: -60,
+                //     scrollTrigger: {
+                //         trigger: ".in-search-section",
+                //         start: '55% 100%',
+                //         end: '90%',
+                //         ease: "ease-in-out",
+                //         // markers: true,
+                //         scrub: true
+                //     },
 
-                });
-
-                gsap.fromTo(".in-search__gull", { y: 100 }, {
-                    y: -50,
-                    scrollTrigger: {
-                        trigger: ".in-search-section",
-                        start: 'top 50%',
-                        end: '65%',
-                        // markers: true,
-                        scrub: true
-                    },
-
-                });
-
-                gsap.fromTo(".in-search__seagulls", { y: 120 }, {
-                    y: -20,
-                    scrollTrigger: {
-                        trigger: ".in-search-section",
-                        start: 'top 50%',
-                        end: '35%',
-                        // markers: true,
-                        scrub: true
-                    },
-
-                });
-
-                gsap.fromTo(".in-search__fish", { x: 60 }, {
-                    x: -60,
-                    scrollTrigger: {
-                        trigger: ".in-search-section",
-                        start: '55% 100%',
-                        end: '90%',
-                        ease: "ease-in-out",
-                        // markers: true,
-                        scrub: true
-                    },
-
-                });
+                // });
             }
         }
     }
@@ -694,6 +658,10 @@ export default {
                     background-position: bottom;
                     position: absolute;
                 }
+
+                .pyasino__video {
+                    display: none;
+                }
             }
 
             .pyasino__video {
@@ -799,13 +767,14 @@ export default {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    background-image: url(../../public/img/in-search.png);
-    background-position: center;
+    // background-image: url(../../public/img/in-search-2.png);
+    // background-position: center;
+    // background-position: 0rem 4rem;
     background-size: cover;
     background-repeat: no-repeat;
-    @supports (background-image: url(../../public/img/in-search.webp)) {
-        background-image: url(../../public/img/in-search.webp);
-    }
+    // @supports (background-image: url(../../public/img/in-search-1.webp)) {
+    //     background-image: url(../../public/img/in-search-1.webp);
+    // }
     @media (max-width: 768px) {
         background-image: url(../../public/img/in-search-mobile.png);
         height: 176.535rem;
@@ -815,74 +784,84 @@ export default {
         }
     }
 
-    &__plane {
+    &__video {
         position: absolute;
-        top: -21rem;
-        left: 0rem;
-        width: 29.5625rem;
-        height: 22.4375rem;
-        background-image: url(../../public/img/plane.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        @supports (background-image: url(../../public/img/plane.webp)) {
-            background-image: url(../../public/img/plane.webp);
-        }
-        @media (max-width: 768px) {
-            display: none;
-        }
+        width: 100%;
+        // top: 0;
+        object-fit: cover;
+        // height: 70rem;
+            /* opacity: 0.5; */
+        z-index: -1;
     }
-    &__gull {
-        position: absolute;
-        top: 3rem;
-        left: 53rem;
-        width: 17.153rem;
-        height: 14.028rem;
-        background-image: url(../../public/img/gull.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        @supports (background-image: url(../../public/img/gull.webp)) {
-            background-image: url(../../public/img/gull.webp);
-        }
-        @media (max-width: 768px) {
-            display: none;
-        }
-    }
-    &__seagulls {
-        position: absolute;
-        top: 0rem;
-        left: 82.76rem;
-        width: 13rem;
-        height: 5rem;
-        background-image: url(../../public/img/seagulls.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        @supports (background-image: url(../../public/img/seagulls.webp)) {
-            background-image: url(../../public/img/seagulls.webp);
-        }
-        @media (max-width: 768px) {
-            display: none;
-        }
-    }
-    &__fish {
-        position: absolute;
-        top: 53.8rem;
-        left: 54rem;
-        width: 28.4rem;
-        height: 11rem;
-        background-image: url(../../public/img/fish.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        @supports (background-image: url(../../public/img/fish.webp)) {
-            background-image: url(../../public/img/fish.webp);
-        }
-        @media (max-width: 768px) {
-            display: none;
-        }
-    }
+
+    // &__plane {
+    //     position: absolute;
+    //     top: -21rem;
+    //     left: 0rem;
+    //     width: 29.5625rem;
+    //     height: 22.4375rem;
+    //     background-image: url(../../public/img/plane.png);
+    //     background-position: center;
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     @supports (background-image: url(../../public/img/plane.webp)) {
+    //         background-image: url(../../public/img/plane.webp);
+    //     }
+    //     @media (max-width: 768px) {
+    //         display: none;
+    //     }
+    // }
+    // &__gull {
+    //     position: absolute;
+    //     top: 3rem;
+    //     left: 53rem;
+    //     width: 17.153rem;
+    //     height: 14.028rem;
+    //     background-image: url(../../public/img/gull.png);
+    //     background-position: center;
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     @supports (background-image: url(../../public/img/gull.webp)) {
+    //         background-image: url(../../public/img/gull.webp);
+    //     }
+    //     @media (max-width: 768px) {
+    //         display: none;
+    //     }
+    // }
+    // &__seagulls {
+    //     position: absolute;
+    //     top: 0rem;
+    //     left: 82.76rem;
+    //     width: 13rem;
+    //     height: 5rem;
+    //     background-image: url(../../public/img/seagulls.png);
+    //     background-position: center;
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     @supports (background-image: url(../../public/img/seagulls.webp)) {
+    //         background-image: url(../../public/img/seagulls.webp);
+    //     }
+    //     @media (max-width: 768px) {
+    //         display: none;
+    //     }
+    // }
+    // &__fish {
+    //     position: absolute;
+    //     top: 53.8rem;
+    //     left: 54rem;
+    //     width: 28.4rem;
+    //     height: 11rem;
+    //     background-image: url(../../public/img/fish.png);
+    //     background-position: center;
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     @supports (background-image: url(../../public/img/fish.webp)) {
+    //         background-image: url(../../public/img/fish.webp);
+    //     }
+    //     @media (max-width: 768px) {
+    //         display: none;
+    //     }
+    // }
 }
 
 .shares {

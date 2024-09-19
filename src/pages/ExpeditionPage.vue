@@ -12,7 +12,7 @@
             </section>
             <SectionWhite>
                 <div class="step-start mb-100">
-                    <img class="step-start__img" src="img/step-1.png">
+                    <img loading="lazy" class="step-start__img" src="img/step-1.png">
                     <div class="step-start__title">
                         Первый этап
                     </div>
@@ -176,7 +176,7 @@
     
             <SectionOrange class="step-two">
                 <div class="step-start mb-100">
-                    <img class="step-start__img" src="img/step-2.png">
+                    <img loading="lazy" class="step-start__img" src="img/step-2.png">
                     <div class="step-start__title">
                         Второй этап
                     </div>
@@ -251,7 +251,7 @@
                         <source media="(max-width: 768px)" type="image/webp" srcset="img/map-rivers-mobile.webp">
                         <source media="(max-width: 768px)" srcset="img/map-rivers-mobile.png">
                         <source type="image/webp" srcset="img/map-rivers.webp">
-                        <img class="step-two__img" src="img/map-rivers.png" alt="">
+                        <img loading="lazy" class="step-two__img" src="img/map-rivers.png" alt="">
                     </picture>
                     <BaseNumberBlock class="step-two__number" textTop="1 400 км" :textBottom="'общая протяжённость маршрутов второго этапа экспедиции'"
                     />
@@ -263,19 +263,15 @@
                     </p>
                 </BaseTextBlock>
                 <div class="step-two__img-measurements">
-                    <picture>
+                    <picture v-if="!isLoadingOne">
                         <source media="(max-width: 768px)" type="image/webp" srcset="img/measurements-mobile.webp">
                         <source media="(max-width: 768px)" srcset="img/measurements-mobile.png">
                         <source type="image/webp" srcset="img/measurements.webp">
-                        <img src="img/measurements.png" alt="">
+                        <img loading="lazy" src="img/measurements.png" alt="">
                     </picture>
-    
-                    <div class="measurements-tool">
-                        <picture>
-                            <source type="image/webp" srcset="img/measurements-tool.webp">
-                            <img src="img/measurements-tool.png" alt="">
-                        </picture>
-                    </div>
+                    <video @loadeddata="videoLoaded" autoplay loop muted playsinline preload="auto">
+                        <source src="video/measurements.mp4" type="video/mp4">
+                    </video>
                 </div>
     
                 <BaseSidebar class="padding-hide">
@@ -288,7 +284,7 @@
     
             <section class="step-three">
                 <div class="step-start mb-100">
-                    <img class="step-start__img" src="img/step-3.png">
+                    <img loading="lazy" class="step-start__img" src="img/step-3.png">
                     <div class="step-start__title">
                         Третий этап
                     </div>
@@ -352,17 +348,25 @@
                 </BaseSidebar>
                 <div class="scena__wrap">
                     <picture>
+                        <source type="image/webp" srcset="img/step-3-scena-line.webp">
+                        <img loading="lazy" class="scena scena-line" src="img/step-3-scena-line.png" alt="">
+                    </picture>
+
+                    <picture>
+                        <source type="image/webp" srcset="img/tractor.webp">
+                        <img loading="lazy" class="scena scena-tractor" src="img/tractor.png" alt="">
+                    </picture>
+
+                    <picture>
                         <source media="(max-width: 768px)" type="image/webp" srcset="img/step-3-scena-mobile.webp">
                         <source media="(max-width: 768px)" srcset="img/step-3-scena-mobile.png">
                         <source type="image/webp" srcset="img/step-3-scena.webp">
-                        <img class="scena" src="img/step-3-scena.png" alt="">
+                        <img loading="lazy" class="scena" src="img/step-3-scena.png" alt="">
                     </picture>
-                    <div class="scena-boat">
-                        <picture>
-                            <source type="image/webp" srcset="img/scena-boat.webp">
-                            <img class="scena" src="img/scena-boat.png" alt="">
-                        </picture>
-                    </div>
+
+                    <video v-if="!isMobile" autoplay loop muted playsinline preload="auto">
+                        <source src="video/step-3-scena.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <BaseSidebar>
                     <p>
@@ -407,11 +411,11 @@ export default {
         this.$nextTick(function() {
             this.sidebarAnimation();
             this.textAnimation();
-            this.parallax()
         })
     },
     data() {
         return {
+            isLoadingOne: false,
             heroDescr: 'Май 2020&nbsp;года, Норильск. Из&#8209;за&nbsp;таяния вечной мерзлоты одна из&nbsp;цистерн ТЭЦ-3 с&nbsp;дизельным топливом треснула у&nbsp;основания, и&nbsp;тысячи кубометров нефтепродуктов просочились за&nbsp;пределы бетонного обвалования, а&nbsp;затем попали на&nbsp;территории за&nbsp;пределами промышленной площадки предприятия и&nbsp;в&nbsp;реки Далдыкан&nbsp;и&nbsp;Амбарная.',
             circales: [{
                     color: 'blue',
@@ -444,7 +448,15 @@ export default {
             ],
         }
     },
+    computed: {
+        isMobile() {
+            return window.innerWidth <= 768
+        },
+    },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
         textAnimation() {
             const collageItems = Array.from(document.querySelectorAll(".text-block__wrap"))
             collageItems.forEach((elem) => {
@@ -481,33 +493,6 @@ export default {
                 })
             })
         },
-        parallax() {
-            if (window.innerWidth > 768) {
-                gsap.fromTo(".measurements-tool", { y: 40 }, {
-                    y: -10,
-                    scrollTrigger: {
-                        trigger: ".step-two__img-measurements",
-                        start: 'top 75%',
-                        end: '35%',
-                        // markers: true,
-                        scrub: true
-                    },
-
-                })
-
-                gsap.fromTo(".scena-boat", { y: 40 }, {
-                    y: 5,
-                    scrollTrigger: {
-                        trigger: ".scena__wrap",
-                        start: 'top 75%',
-                        end: '35%',
-                        // markers: true,
-                        scrub: true
-                    },
-
-                })
-            }
-        }
     }
 }
 </script>
@@ -853,35 +838,42 @@ export default {
         width: 28.43rem;
         height: 35.56rem;
         mix-blend-mode: darken;
+
         @media (max-width: 768px) {
             margin: 0 0 14.4rem 0;
             width: 86.4rem;
             height: 108.27rem;
         }
+
         &-measurements {
             position: relative;
             display: block;
             margin: -2rem auto 2.5rem auto;
             width: 56.806rem;
             height: 28.681em;
+            overflow: hidden;
+
             img {
                 width: 100%;
                 height: 100%;
             }
+
+            video {
+                width: 116%;
+                left: -6rem;
+                position: relative;
+                mix-blend-mode: darken;
+
+                @media (max-width: 768px) {
+                    width: 122%;
+                    left: -13rem;
+                }
+            }
+            
             @media (max-width: 768px) {
                 margin: 0 auto 10.5rem auto;
                 width: 100%;
                 height: 53.0625rem;
-            }
-            .measurements-tool {
-                position: absolute;
-                top: 11rem;
-                left: 33rem;
-                width: 14.0977rem;
-                height: 11.4588rem;
-                @media (max-width: 768px) {
-                    display: none;
-                }
             }
         }
     }
@@ -929,29 +921,49 @@ export default {
 .step-three {
     .scena {
         width: 100%;
-        height: 46.1875rem;
+
         @media (max-width: 768px) {
             height: 279.2rem;
         }
+
         &__wrap {
             position: relative;
             margin: 3.75rem 0 2.5rem 0;
+
             @media (max-width: 768px) {
                 margin: 13.3334rem 0 10.6666rem 0;
             }
-            .scena-boat {
+
+            video {
+                width: 121%;
                 position: absolute;
-                top: 12rem;
-                left: 77rem;
-                width: 239px;
-                height: 147px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
+                top: -6.3rem;
+                left: -11rem;
+
                 @media (max-width: 768px) {
                     display: none;
                 }
+            }
+        }
+
+        &-line {
+            position: absolute;
+            z-index: 1;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &-tractor {
+            position: absolute;
+            width: 22rem;
+            z-index: 1;
+            top: 9rem;
+            left: 7rem;
+
+            @media (max-width: 768px) {
+                display: none;
             }
         }
     }
