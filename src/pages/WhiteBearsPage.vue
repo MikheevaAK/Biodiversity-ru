@@ -169,7 +169,7 @@
                             srcset="img/thunderstorm-arctic-map-mobile.webp">
                         <source media="(max-width: 768px)" srcset="img/thunderstorm-arctic-map-mobile.png">
                         <source type="image/webp" srcset="img/thunderstorm-arctic-map.webp">
-                        <img loading="lazy" src="img/thunderstorm-arctic-map.png" alt="">
+                        <img src="img/thunderstorm-arctic-map.png" alt="">
                     </picture>
 
                     <div class="circale-block circale-block_1"></div>
