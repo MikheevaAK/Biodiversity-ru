@@ -28,6 +28,19 @@
             </BaseTextBlock>
             <section class="section-blue">
                 <div class="thunderstorm-arctic">
+                    <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline>
+                        <source src="https://www.dropbox.com/scl/fi/6b39phymxy6yxg2t5kaqa/bear-1.mov?rlkey=ah29146b3a0w6by18g6ex50rd&st=24ggdbzg&dl=0" type="video/mp4">
+                        <source src="video/bear-1.webm" type="video/webm">
+                    </video>
+                    <picture v-if="!isLoadingTwo">
+                        <source src="img/bear-1.webp" type="img/webp">
+                        <img loading="lazy" src="img/bear-1.png" alt="" class="bear">
+                    </picture>
+
+                    <picture>
+                        <source src="img/bear-line.webp" type="img/webp">
+                        <img loading="lazy" src="img/bear-line.png" alt="" class="bear-line">
+                    </picture>
                     <div class="thunderstorm-arctic__icon-bear">
                         <svg width="150" height="78" viewBox="0 0 150 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -50,7 +63,7 @@
                         во&nbsp;льду.
                     </div>
                     <div class="thunderstorm-arctic__item thunderstorm-arctic__item_paw">
-                        <img src="img/paw.png" alt="">
+                        <img loading="lazy" src="img/paw.png" alt="">
                         <div class="thunderstorm-arctic__item-title">
                             Сцепление со льдом
                         </div>
@@ -62,7 +75,7 @@
                         </div>
                     </div>
                     <div class="thunderstorm-arctic__item thunderstorm-arctic__item_hairs">
-                        <img src="img/hairs.png" alt="">
+                        <img loading="lazy" src="img/hairs.png" alt="">
                         <div class="thunderstorm-arctic__item-title">
                             Ворсинки — прозрачные&nbsp;и&nbsp;полые
                         </div>
@@ -74,7 +87,7 @@
                         </div>
                     </div>
                     <div class="thunderstorm-arctic__item thunderstorm-arctic__item_leather">
-                        <img src="img/leather.png" alt="">
+                        <img loading="lazy" src="img/leather.png" alt="">
                         <div class="thunderstorm-arctic__item-title">
                             Кожа чёрного цвета
                         </div>
@@ -103,19 +116,19 @@
                         </div>
                         <div class="thunderstorm-arctic__nutrition-wrap">
                             <div class="thunderstorm-arctic__nutrition-item">
-                                <img src="img/fur-seal.png" alt="">
+                                <img loading="lazy" src="img/fur-seal.png" alt="">
                                 <div class="thunderstorm-arctic__nutrition-item-descr">
                                     Ластоногие
                                 </div>
                             </div>
                             <div class="thunderstorm-arctic__nutrition-item">
-                                <img src="img/narwhal.png" alt="">
+                                <img loading="lazy" src="img/narwhal.png" alt="">
                                 <div class="thunderstorm-arctic__nutrition-item-descr">
                                     Туши выброшенных на&nbsp;берег китов, нарвалов, белух; мёртвых птиц и&nbsp;наземных млекопитающих
                                 </div>
                             </div>
                             <div class="thunderstorm-arctic__nutrition-item">
-                                <img src="img/white-bear-fish.png" alt="">
+                                <img loading="lazy" src="img/white-bear-fish.png" alt="">
                                 <div class="thunderstorm-arctic__nutrition-item-descr">
                                     Жирная морская рыба
                                 </div>
@@ -156,7 +169,7 @@
                             srcset="img/thunderstorm-arctic-map-mobile.webp">
                         <source media="(max-width: 768px)" srcset="img/thunderstorm-arctic-map-mobile.png">
                         <source type="image/webp" srcset="img/thunderstorm-arctic-map.webp">
-                        <img src="img/thunderstorm-arctic-map.png" alt="">
+                        <img loading="lazy" src="img/thunderstorm-arctic-map.png" alt="">
                     </picture>
 
                     <div class="circale-block circale-block_1"></div>
@@ -190,7 +203,7 @@
                         </div>
                     </a>
                 </BaseTextBlock>
-                <img class="line line-bottom" src="img/strip.png" alt="">
+                <img loading="lazy" class="line line-bottom" src="img/strip.png" alt="">
             </section>
 
             <SectionWhite>
@@ -322,11 +335,18 @@
                         Ближнего Востока. Российские браконьеры незаконно отлавливают этих птиц и&nbsp;отправляют
                         за&nbsp;границу.
                     </div>
-                    <picture>
+                    <picture v-if="!isLoadingOne">
                         <source type="image/webp" srcset="img/merlin.webp">
                         <img loading="lazy" src="img/merlin.png" alt="">
                     </picture>
+
+                    <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
+                        <source src="video/merlin.mov" type="video/mp4">
+                        <source src="video/merlin.webm" type="video/webm">
+                    </video>
                 </div>
+
+                 
                 <BaseSidebar>
                     <p>
                         Уже более десяти лет &laquo;Норникель&raquo; участвует в&nbsp;спасении белых медведей.
@@ -362,7 +382,8 @@ export default {
     },
     data() {
         return {
-            heroDescrEn: 'In the past, polar bears reigned supreme over the entire Arctic, with no serious adversaries in the north. However, the combined effects of global climate change and human presence have pushed these magnificent predators to the brink of extinction. Today, scientists estimate that there are no more than 25,000 polar bears left worldwide, with approximately 5,000 to 6,000 of them found in Russia.',
+            isLoadingOne: false,
+            isLoadingTwo: false,
             heroDescr: 'Когда‑то вся Арктика принадлежала белым медведям: на&nbsp;Севере не&nbsp;было зверей, которые могли&nbsp;бы на&nbsp;равных соперничать с&nbsp;ними. Но&nbsp;глобальное изменение климата и&nbsp;соседство с&nbsp;людьми привело полярных хищников на&nbsp;грань вымирания: сейчас, по&nbsp;оценкам учёных, в&nbsp;мире осталось не&nbsp;более 25&nbsp;тыс. особей, из&nbsp;них 5&ndash;6&nbsp;тыс. живут на&nbsp;территории нашей страны.'
         }
     },
@@ -372,6 +393,12 @@ export default {
         })
     },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
         scrollMobile() {
             const collageItems = Array.from(document.querySelectorAll(".scroll-bg.active"))
 
@@ -638,14 +665,14 @@ export default {
         margin-bottom: -32rem;
         position: relative;
         top: -38rem;
-        background-image: url(../../public/img/bear.png);
+        background-image: url(../../public/img/snow.png);
         background-size: contain;
         min-height: 87rem;
         background-repeat: no-repeat;
         background-position: top;
 
-        @supports (background-image: url(../../public/img/bear.webp)) {
-            background-image: url(../../public/img/bear.webp);
+        @supports (background-image: url(../../public/img/snow.webp)) {
+            background-image: url(../../public/img/snow.webp);
         }
 
         @media (max-width: 768px) {
@@ -657,6 +684,39 @@ export default {
 
             @supports (background-image: url(../../public/img/bear-mobile.webp)) {
                 background-image: url(../../public/img/bear-mobile.webp);
+            }
+        }
+
+        video {
+            position: absolute;
+            width: 51.34956rem;
+            left: 27rem;
+            top: 14rem;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .bear {
+            position: absolute;
+            width: 51.34956rem;
+            left: 27rem;
+            top: 20rem;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .bear-line {
+            position: absolute;
+            width: 51.34956rem;
+            top: 21rem;
+            left: 26rem;
+
+            @media (max-width: 768px) {
+                display: none;
             }
         }
 
@@ -1352,6 +1412,22 @@ export default {
                 height: 50.6rem;
                 left: 5.5rem;
                 top: -14.5rem;
+            }
+        }
+
+        video {
+            position: absolute;
+            display: block;
+            width: 80rem;
+            height: auto;
+            top: -38.3rem;
+            left: -30.366rem;
+            z-index: 2;
+
+            @media (max-width: 768px) {
+                width: 187.5rem;
+                left: -47.5rem;
+                top: -93.5rem;
             }
         }
     }

@@ -51,6 +51,9 @@
                 <div class="scroll-bg bg-2">
                 </div>
                 <div class="scroll-bg bg-3">
+                    <video v-if="!isMobile" autoplay loop muted playsinline class="pyasino__video" preload="auto">
+                        <source src="video/fish.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="scroll-bg bg-4">
                 </div>
@@ -262,6 +265,11 @@ export default {
             this.scrollAnimation()
             this.parallax()
         })
+    },
+    computed: {
+        isMobile() {
+            return window.innerWidth <= 768
+        },
     },
     beforeDestroy() {
         this.oneScrollTrigger.kill()
@@ -642,6 +650,15 @@ export default {
     }
 }
 
+.pyasino__video {
+    position: fixed;
+    z-index: 8;
+    bottom: 0;
+    width: 118.5%;
+    left: -9.3%;
+    opacity: 0;
+}
+
 .pyasino .scroll {
     position: relative;
     width: 100%;
@@ -677,6 +694,10 @@ export default {
                     background-position: bottom;
                     position: absolute;
                 }
+            }
+
+            .pyasino__video {
+                opacity: 1;
             }
         }
         &.bg-1 {

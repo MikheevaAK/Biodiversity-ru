@@ -2,6 +2,8 @@
 /node_modules
 /dist
 
+public/video/bear-1.mov
+
 
 # local env files
 .env.local

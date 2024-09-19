@@ -15,5 +15,6 @@ export default {
 <style lang="scss">
 .main {
     padding: 3.75rem 0 2.5rem 0;
+    overflow: hidden;
 }
 </style>
