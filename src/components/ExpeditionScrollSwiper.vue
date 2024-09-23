@@ -137,13 +137,18 @@
     
             </div>
             <div class="team-item zoologist">
-                <!-- <video @loadeddata="videoLoadedFour" autoplay loop muted playsinline>
-                    <source src="" type="video/mp4">
+                <video @loadeddata="videoLoadedFour" autoplay loop muted playsinline>
+                    <source src="https://www.dropbox.com/scl/fi/o8g1dxdy9d9uze3nbuggj/zoologist.mov?rlkey=7zuqymk0s50524ah41a8mc4z4&st=qi13pnqr&dl=0" type="video/mp4">
                     <source src="video/zoologist.webm" type="video/webm">
-                </video> -->
-                <picture>
+                </video>
+                <picture v-if="!isLoadingFour">
                     <source type="image/webp" srcset="img/zoologist.webp">
                     <img loading="lazy" class="team-item__img" src="img/zoologist.png" alt="">
+                </picture>
+
+                <picture v-if="isLoadingFour">
+                    <source type="image/webp" srcset="img/spruces.webp">
+                    <img loading="lazy" class="spruces" src="img/spruces.png" alt="">
                 </picture>
     
                 <div class="team-item__text-block">
@@ -605,6 +610,29 @@ export default {
             }
             &__title {
                 margin-left: 3rem;
+            }
+        }
+
+        video {
+            width: 146%;
+            position: absolute;
+            left: -25rem;
+            bottom: -4rem;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .spruces {
+            position: absolute;
+            bottom: -7px;
+            left: 0rem;
+            width: 50%;
+            z-index: -1;
+
+            @media (max-width: 768px) {
+                display: none;
             }
         }
     }
