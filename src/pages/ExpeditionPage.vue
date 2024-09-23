@@ -936,7 +936,7 @@ export default {
 
             video {
                 width: 121%;
-                position: absolute;
+                position: relative;
                 top: -6.3rem;
                 left: -11rem;
 
