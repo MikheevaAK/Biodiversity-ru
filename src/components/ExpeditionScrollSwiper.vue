@@ -414,7 +414,9 @@ export default {
             left: -16.6rem;
 
             @media (max-width: 768px) {
-                display: none;
+                width: 131%;
+                left: -60rem;
+                bottom: -13rem;
             }
         }
 
@@ -426,7 +428,9 @@ export default {
             z-index: -1;
 
             @media (max-width: 768px) {
-                display: none;
+                bottom: 2rem;
+                left: -11rem;
+                width: 75%;
             }
         }
     }
@@ -486,7 +490,9 @@ export default {
             bottom: -3rem;
 
             @media (max-width: 768px) {
-                display: none;
+                width: 141%;
+                left: -47rem;
+                bottom: -11rem;
             }
         }
     }
@@ -539,7 +545,6 @@ export default {
             }
         }
 
-
         video {
             width: 46%;
             position: absolute;
@@ -547,7 +552,9 @@ export default {
             bottom: 0.6rem;
 
             @media (max-width: 768px) {
-                display: none;
+                width: 53%;
+                left: -5rem;
+                bottom: -5.5rem;
             }
         }
 
@@ -559,7 +566,9 @@ export default {
             z-index: -1;
 
             @media (max-width: 768px) {
-                display: none;
+                top: 42.4rem;
+                left: 23.8rem;
+                width: 24%;
             }
         }
     }
@@ -620,7 +629,9 @@ export default {
             bottom: -4rem;
 
             @media (max-width: 768px) {
-                display: none;
+                   width: 122%;
+                    left: -78rem;
+                    bottom: -10rem;
             }
         }
 
@@ -632,7 +643,9 @@ export default {
             z-index: -1;
 
             @media (max-width: 768px) {
-                display: none;
+                bottom: 1rem;
+                left: 0rem;
+                width: 44%;
             }
         }
     }

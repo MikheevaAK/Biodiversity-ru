@@ -499,10 +499,17 @@ export default {
 
 <style lang="scss">
 .expedition .big-map {
+    height: 60rem;
+
+    @media (max-width: 768px) {
+        height: 166rem;
+    }
+
     img {
         width: 97rem;
         margin-top: 1.75rem;
         margin-left: 2.75rem;
+
         @media (max-width: 768px) {
             width: 100%;
             margin-top: -3.25rem;
@@ -515,6 +522,7 @@ export default {
     .circales {
         display: flex;
         gap: 1.5rem;
+        
         @media (max-width: 768px) {
             gap: 3.2rem;
         }
