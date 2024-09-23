@@ -2,9 +2,18 @@
     <div class="team-container__wrap">
         <div class="team-container">
             <div class="team-item hydrochemist">
-                <picture>
+                <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
+                    <source src="hydrochemist.mov" type="video/mp4">
+                    <source src="video/hydrochemist.webm" type="video/webm">
+                </video>
+                <picture v-if="!isLoadingOne">
                     <source type="image/webp" srcset="img/hydrochemist.webp">
-                    <img class="team-item__img" src="img/hydrochemist.png" alt="">
+                    <img loading="lazy" class="team-item__img" src="img/hydrochemist.png" alt="">
+                </picture>
+
+                <picture v-if="isLoadingOne">
+                    <source type="image/webp" srcset="img/ground.webp">
+                    <img loading="lazy" class="hydrochemist__ground" src="img/ground.png" alt="">
                 </picture>
                 <div class="team-item__text-block">
                     <div class="team-item__title">
@@ -40,12 +49,16 @@
                         </span>
                     </div>
                 </div>
-                <img class="team-item__img-grass" src="img/grass.png" alt="">
+                <img loading="lazy" class="team-item__img-grass" src="img/grass.png" alt="">
             </div>
             <div class="team-item geocryologists">
-                <picture>
+                <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline>
+                    <source src="geocryologists.mov" type="video/mp4">
+                    <source src="video/geocryologists.webm" type="video/webm">
+                </video>
+                <picture v-if="!isLoadingTwo">
                     <source type="image/webp" srcset="img/geocryologists.webp">
-                    <img class="team-item__img" src="img/geocryologists.png" alt="">
+                    <img loading="lazy" class="team-item__img" src="img/geocryologists.png" alt="">
                 </picture>
     
                 <div class="team-item__text-block">
@@ -79,9 +92,18 @@
                 </div>
             </div>
             <div class="team-item scientists">
-                <picture>
+                <video @loadeddata="videoLoadedThree" autoplay loop muted playsinline>
+                    <source src="https://www.dropbox.com/scl/fi/1b8rybrmlo93wti7c00ov/soil-scientists.mov?rlkey=sn5t1ml73gws3v95ip7gl9pqs&st=mp2rgp3q&dl=0" type="video/mp4">
+                    <source src="video/soil-scientists.webm" type="video/webm">
+                </video>
+                <picture v-if="!isLoadingThree">
                     <source type="image/webp" srcset="img/soil-scientists.webp">
-                    <img class="team-item__img" src="img/soil-scientists.png" alt="">
+                    <img loading="lazy" class="team-item__img" src="img/soil-scientists.png" alt="">
+                </picture>
+
+                <picture v-if="isLoadingThree">
+                    <source type="image/webp" srcset="img/spruce.webp">
+                    <img loading="lazy" class="spruce" src="img/spruce.png" alt="">
                 </picture>
     
                 <div class="team-item__text-block">
@@ -115,9 +137,13 @@
     
             </div>
             <div class="team-item zoologist">
+                <!-- <video @loadeddata="videoLoadedFour" autoplay loop muted playsinline>
+                    <source src="" type="video/mp4">
+                    <source src="video/zoologist.webm" type="video/webm">
+                </video> -->
                 <picture>
                     <source type="image/webp" srcset="img/zoologist.webp">
-                    <img class="team-item__img" src="img/zoologist.png" alt="">
+                    <img loading="lazy" class="team-item__img" src="img/zoologist.png" alt="">
                 </picture>
     
                 <div class="team-item__text-block">
@@ -161,12 +187,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default {
+    data() {
+        return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+            isLoadingThree: false,
+            isLoadingFour: false,
+        }
+    },
     mounted() {
         this.$nextTick(function() {
             this.scrollAnimation();
         })
     },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
+        videoLoadedThree() {
+            this.isLoadingThree = true;
+        },
+        videoLoadedFour() {
+            this.isLoadingFour = true;
+        },
         scrollAnimation() {
             if (window.innerWidth > 768) {
                 const panels = gsap.utils.toArray(".team-container .team-item");
@@ -176,7 +222,7 @@ export default {
                     scrollTrigger: {
                         trigger: ".team",
                         pin: true,
-                        start: "top -10%",
+                        start: "top -9%",
                         scrub: 1,
                         end: () => "+=" + (document.querySelector(".team-container").offsetWidth - window.innerWidth)
                     }
@@ -356,6 +402,28 @@ export default {
                 }
             }
         }
+
+        video {
+            width: 137%;
+            position: absolute;
+            left: -16.6rem;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 79%;
+            z-index: -1;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
     }
     .geocryologists {
         width: 38.315rem;
@@ -405,6 +473,17 @@ export default {
                 }
             }
         }
+
+        video {
+            width: 123%;
+            position: absolute;
+            left: -14.6rem;
+            bottom: -3rem;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
     }
     .scientists {
         width: 39.06rem;
@@ -452,6 +531,30 @@ export default {
                 @media (max-width: 768px) {
                     width: 79rem;
                 }
+            }
+        }
+
+
+        video {
+            width: 46%;
+            position: absolute;
+            left: -1rem;
+            bottom: 0.6rem;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .spruce {
+            position: absolute;
+            top: 24.6rem;
+            left: 6.8rem;
+            width: 19%;
+            z-index: -1;
+
+            @media (max-width: 768px) {
+                display: none;
             }
         }
     }

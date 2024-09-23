@@ -153,7 +153,7 @@
                     </BaseTextBlock>
     
                     <div class="number-blocks text-block__wrap">
-                        <BaseNumberBlock textTop="6 рек" textBottom="'посетили в ходе экспедиции" />
+                        <BaseNumberBlock textTop="6 рек" textBottom="посетили в ходе экспедиции" />
                         <BaseNumberBlock textTop="> 1 000 км" :textBottom="'преодолели по земле, воде и&nbsp;воздуху'" />
                         <BaseNumberBlock :textTop="'2&nbsp;000&nbsp;проб'" :textBottom="'собрали в&nbsp;процессе исследований'" />
                     </div>
