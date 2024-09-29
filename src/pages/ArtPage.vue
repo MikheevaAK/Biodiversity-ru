@@ -982,7 +982,7 @@ export default {
 
             @media (max-width: 768px) {
                 height: 32rem;
-                bottom: -3rem;
+                bottom: -4rem;
             }
         }
     }

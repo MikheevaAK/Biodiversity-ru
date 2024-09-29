@@ -10,16 +10,83 @@
             </BaseTextBlock>
 
             <section class="scroll mb-100">
-                <div class="scroll-bg bg-1"></div>
-                <div class="scroll-bg bg-2"></div>
-                <div class="scroll-bg bg-3"></div>
+                <div class="scroll-bg bg-1">
+                    <div class="wrap-a">
+                        <video class="fox" autoplay loop muted playsinline>
+                            <source src="video/fox.mov" type="video/mp4">
+                            <source src="video/fox.webm" type="video/webm">
+                        </video>
+                        <video class="deep" autoplay loop muted playsinline>
+                            <source src="video/deep.mov" type="video/mp4">
+                            <source src="video/deep.webm" type="video/webm">
+                        </video>
+
+                        <video class="harrier" autoplay loop muted playsinline>
+                            <source src="video/harrier.mov" type="video/mp4">
+                            <source src="video/harrier.webm" type="video/webm">
+                        </video>
+
+                        <video class="eagle" autoplay loop muted playsinline>
+                            <source
+                                src="https://www.dropbox.com/scl/fi/7ofqzyjl9ja3h3ffyha6h/eagle.mov?rlkey=6xql3op0vtdtcd3s3i6iv0bzu&st=evc04g2d&dl=0"
+                                type="video/mp4">
+                            <source src="video/eagle.webm" type="video/webm">
+                        </video>
+                    </div>
+                </div>
+                <div class="scroll-bg bg-2">
+                    <div class="wrap-a">
+                        <video class="marten" autoplay loop muted playsinline>
+                            <source src="video/marten.mov" type="video/mp4">
+                            <source src="video/marten.webm" type="video/webm">
+                        </video>
+
+                        <video class="golden-eagle" autoplay loop muted playsinline>
+                            <source
+                                src="https://www.dropbox.com/scl/fi/j0cj8u1oullb932g8x0ki/golden-eagle.mov?rlkey=z5wykceu6wquf70bf55xeg8qh&st=5vrz895u&dl=0"
+                                type="video/mp4">
+                            <source src="video/golden-eagle.webm" type="video/webm">
+                        </video>
+                    </div>
+                </div>
+                <div class="scroll-bg bg-3">
+                    <div class="wrap-a">
+                        <video class="fox" autoplay loop muted playsinline>
+                            <source src="video/fox.mov" type="video/mp4">
+                            <source src="video/fox.webm" type="video/webm">
+                        </video>
+                        <video class="marten" autoplay loop muted playsinline>
+                            <source src="video/marten.mov" type="video/mp4">
+                            <source src="video/marten.webm" type="video/webm">
+                        </video>
+                        <video class="deep" autoplay loop muted playsinline>
+                            <source src="video/deep.mov" type="video/mp4">
+                            <source src="video/deep.webm" type="video/webm">
+                        </video>
+                        <video class="harrier" autoplay loop muted playsinline>
+                            <source src="video/harrier.mov" type="video/mp4">
+                            <source src="video/harrier.webm" type="video/webm">
+                        </video>
+                        <video class="golden-eagle" autoplay loop muted playsinline>
+                            <source
+                                src="https://www.dropbox.com/scl/fi/j0cj8u1oullb932g8x0ki/golden-eagle.mov?rlkey=z5wykceu6wquf70bf55xeg8qh&st=5vrz895u&dl=0"
+                                type="video/mp4">
+                            <source src="video/golden-eagle.webm" type="video/webm">
+                        </video>
+                        <video class="eagle" autoplay loop muted playsinline>
+                            <source
+                                src="https://www.dropbox.com/scl/fi/7ofqzyjl9ja3h3ffyha6h/eagle.mov?rlkey=6xql3op0vtdtcd3s3i6iv0bzu&st=evc04g2d&dl=0"
+                                type="video/mp4">
+                            <source src="video/eagle.webm" type="video/webm">
+                        </video>
+                    </div>
+                </div>
                 <div class="scroll-wrap">
                     <div class="scroll-card card-1 text-block__descr">
                         <BaseTextBlock title="Сбор данных в зонах воздействия">
                             Для животных и&nbsp;растений это показатели видового разнообразия и&nbsp;обилия индикаторных
                             групп. Для рек, озёр и&nbsp;почв&nbsp;&mdash; содержание тех или&nbsp;иных химических
-                            элементов,
-                            присутствие живых организмов и&nbsp;т.&nbsp;п.
+                            элементов, присутствие живых организмов и&nbsp;т.&nbsp;п.
                         </BaseTextBlock>
                     </div>
                     <div class="scroll-card card-2 text-block__descr">
@@ -42,7 +109,8 @@
                                 Поскольку реакция на&nbsp;антропогенное воздействие у&nbsp;разных организмов может
                                 отличаться, для более точного результата при расчёте ИПСЭ учитываются показатели
                                 по&nbsp;целому комплексу индикаторных групп и&nbsp;видов. Для фоновых территорий ИПСЭ
-                                априори принимается за&nbsp;единицу.
+                                априори
+                                принимается за&nbsp;единицу.
                             </p>
                         </BaseTextBlock>
                     </div>
@@ -52,13 +120,11 @@
             <BaseTextBlock class="mb-40" title="Как считается ИПСЭ дивизиона">
                 <p class="mb-10">
                     Отклонение от&nbsp;фона просчитывается для каждого индикатора в&nbsp;отдельности по&nbsp;каждой зоне
-                    воздействия:
-                    Показатель зоны&nbsp;/ Показатель фона = Коэффициент индикатора в&nbsp;зоне.
+                    воздействия: Показатель зоны&nbsp;/ Показатель фона = Коэффициент индикатора в&nbsp;зоне.
                 </p>
                 <p>
                     Полученные результаты суммируются, а&nbsp;затем делятся на&nbsp;общее количество индикаторов.
-                    Получаем
-                    ИПСЭ в&nbsp;зоне воздействия.
+                    Получаем ИПСЭ в&nbsp;зоне воздействия.
                 </p>
             </BaseTextBlock>
 
@@ -111,8 +177,7 @@
                     <div class="indicator__calculation-step indicator__calculation-step-1">
                         <div class="indicator__calculation-step-number">1</div>
                         <div class="indicator__calculation-step-descr">
-                            Просчитываем отклонения для каждого индикатора
-                            в&nbsp;зоне воздействия
+                            Просчитываем отклонения для каждого индикатора в&nbsp;зоне воздействия
                         </div>
                     </div>
                     <div class="indicator__calculation-step indicator__calculation-step-2">
@@ -124,8 +189,7 @@
                     <div class="indicator__calculation-step indicator__calculation-step-3">
                         <div class="indicator__calculation-step-number">3</div>
                         <div class="indicator__calculation-step-descr">
-                            Делим сумму на&nbsp;количество индикаторов
-                            в&nbsp;зоне
+                            Делим сумму на&nbsp;количество индикаторов в&nbsp;зоне
                         </div>
                     </div>
                 </div>
@@ -682,16 +746,178 @@ export default {
             &.bg-1 {
                 z-index: 3;
                 background-image: url(../../public/img/indicator-1.jpg);
+
+                .wrap-a {
+                    display: none;
+                }
+
+                .fox {
+                    width: 9%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 2rem;
+                    left: 39.5rem;
+                }
+
+                .deep {
+                    width: 8%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 2rem;
+                    right: 0.5rem;
+                }
+
+                .eagle {
+                    width: 12%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 11rem;
+                    right: 33.5rem;
+                }
+
+                .harrier {
+                    width: 10%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 13rem;
+                    left: 36rem;
+                }
+
+                &.active {
+                    .wrap-a {
+                        display: block;
+                    }
+                }
+
+                &.remove-active {
+                    .wrap-a {
+                        display: none;
+                    }
+                }
             }
 
             &.bg-2 {
                 z-index: 2;
                 background-image: url(../../public/img/indicator-2.jpg);
+
+                .wrap-a {
+                    display: none;
+                }
+
+                .marten {
+                    width: 8%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 11rem;
+                    left: 2rem;
+                }
+
+                .golden-eagle {
+                    width: 12%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 27rem;
+                    left: 20rem;
+                }
+
+                &.active {
+                    .wrap-a {
+                        display: block;
+                    }
+                }
+
+                // &.remove-active {
+                //     .wrap-a {
+                //         display: none;
+                //     }
+                // }
             }
 
             &.bg-3 {
                 z-index: 1;
                 background-image: url(../../public/img/indicator-3.jpg);
+
+                .wrap-a {
+                    display: none;
+                }
+
+                .fox {
+                    width: 9%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 2rem;
+                    left: 39.5rem;
+                }
+
+                .deep {
+                    width: 8%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 2rem;
+                    right: 0.5rem;
+                }
+
+                .marten {
+                    width: 8%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 11rem;
+                    left: 2rem;
+                }
+
+                .golden-eagle {
+                    width: 12%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 27rem;
+                    left: 20rem;
+                }
+
+                .eagle {
+                    width: 12%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 11rem;
+                    right: 33.5rem;
+                }
+
+                .harrier {
+                    width: 10%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 13rem;
+                    left: 36rem;
+                }
+
+                &.active {
+                    .wrap-a {
+                        display: block;
+                    }
+                }
+
+                &.remove-active {
+
+                    .fox,
+                    .deep {
+                        position: absolute;
+                        bottom: 3rem;
+                    }
+
+                    .eagle,
+                    .marten {
+                        position: absolute;
+                        bottom: 12rem;
+                    }
+
+                    .harrier {
+                        position: absolute;
+                        bottom: 14rem;
+                    }
+                    .golden-eagle {
+                        position: absolute;
+                        bottom: 28rem;
+                    }
+                }
             }
 
             @media (max-width: 768px) {
@@ -1152,7 +1378,7 @@ export default {
         img {
             position: absolute;
             width: 31%;
-            left: 3rem;
+            left: 2rem;
             bottom: 8rem;
 
             @media (max-width: 768px) {
