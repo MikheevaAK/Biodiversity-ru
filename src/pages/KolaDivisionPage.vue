@@ -2419,7 +2419,7 @@ export default {
         &__broody {
             position: absolute;
             width: 28rem;
-            top: 555.3rem;
+            top: 254.3rem;
             left: 62.7rem;
 
             video {

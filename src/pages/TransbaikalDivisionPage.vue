@@ -1424,9 +1424,9 @@ export default {
 
         &__warbler {
             position: absolute;
-            top: 195.7rem;
+            top: 95.7rem;
             left: 35.4rem;
-            width: 48rem;
+            width: 18rem;
 
             @media (max-width: 768px) {
                 top: 309.7rem;
@@ -1462,7 +1462,7 @@ export default {
 
         &__сolumns {
             position: absolute;
-            top: 40rem;
+            top: 140rem;
             left: 40rem;
             width: 41rem;
 
