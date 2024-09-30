@@ -339,7 +339,8 @@
                 <div v-else>
                     <picture style="overflow: hidden; width: 100%; display: block;">
                         <source type="image/webp" srcset="img/terrestrial-ecosystem.webp">
-                        <img loading="lazy" style="width: 155%; object-position: -15rem;" src="img/terrestrial-ecosystem.png" alt="">
+                        <img loading="lazy" style="width: 155%; object-position: -15rem;"
+                            src="img/terrestrial-ecosystem.png" alt="">
                     </picture>
 
                     <picture>
@@ -470,13 +471,13 @@
                             <source type="image/webp" srcset="img/shrew.webp">
                             <img loading="lazy" src="img/shrew.png" alt="">
                         </picture>
-                        
+
                         <div class="position-info__descr">
                             Среди млекопитающих индикатором значительного воздействия стала бурозубка.
                         </div>
 
                         <BaseDropdownInfo title="Бурозубка" :pulsation-color="'Green-Mist'"
-                        :text="'Индикатор значительного воздействия — отсутствие в&nbsp;отловах бурозубок'" />
+                            :text="'Индикатор значительного воздействия — отсутствие в&nbsp;отловах бурозубок'" />
                     </div>
                 </BaseTextBlock>
 
@@ -485,11 +486,234 @@
                     <BaseCollageInfo text="Индикаторные виды" />
                 </div>
                 <div class="collage mb-100">
-                    <!-- <video v-if="!isMobile" autoplay loop muted playsinline class="collage__video" preload="auto">
-                        <source src="video/kola.mp4" type="video/mp4">
-                    </video> -->
-                    <div class="collage__golden-eagle"></div>
-                    <div class="collage__bluethroat"></div>
+                    <div class="collage__golden-eagle">
+                        <video @loadeddata="videoLoadedOne" autoplay loop muted playsinline preload="none">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/j0cj8u1oullb932g8x0ki/golden-eagle.mov?rlkey=z5wykceu6wquf70bf55xeg8qh&st=5vrz895u&dl=0"
+                                type="video/mp4">
+                            <source src="video/golden-eagle.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingOne">
+                            <source type="image/webp" srcset="img/collage-kola-golden-eagle.webp">
+                            <img loading="lazy" src="img/collage-kola-golden-eagle.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="collage__bluethroat">
+                        <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline preload="none">
+                            <source src="video/bluethroat.mov" type="video/mp4">
+                            <source src="video/bluethroat.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTwo">
+                            <source type="image/webp" srcset="img/collage-kola-bluethroat.webp">
+                            <img loading="lazy" src="img/collage-kola-bluethroat.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__tap-dance">
+                        <video @loadeddata="videoLoadedThree" autoplay loop muted playsinline preload="none">
+                            <source src="video/tap-dance.mov" type="video/mp4">
+                            <source src="video/tap-dance.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingThree">
+                            <source type="image/webp" srcset="img/tap-dance.webp">
+                            <img loading="lazy" src="img/tap-dance.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__white-browed">
+                        <video @loadeddata="videoLoadedFour" autoplay loop muted playsinline preload="none">
+                            <source src="video/white-browed.mov" type="video/mp4">
+                            <source src="video/white-browed.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingFour">
+                            <source type="image/webp" srcset="img/white-browed.webp">
+                            <img loading="lazy" src="img/white-browed.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__squirrel">
+                        <video @loadeddata="videoLoadedFive" autoplay loop muted playsinline preload="none">
+                            <source src="video/squirrel.mov" type="video/mp4">
+                            <source src="video/squirrel.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingFive">
+                            <img loading="lazy" src="img/squirrel.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__redstart">
+                        <video @loadeddata="videoLoadedSix" autoplay loop muted playsinline preload="none">
+                            <source src="video/redstart.mov" type="video/mp4">
+                            <source src="video/redstart.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingSix">
+                            <source type="image/webp" srcset="img/redstart.webp">
+                            <img loading="lazy" src="img/redstart.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__yurok">
+                        <video @loadeddata="videoLoadedSeven" autoplay loop muted playsinline preload="none">
+                            <source src="video/yurok.mov" type="video/mp4">
+                            <source src="video/yurok.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingSeven">
+                            <source type="image/webp" srcset="img/yurok.webp">
+                            <img loading="lazy" src="img/yurok.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__elk">
+                        <video @loadeddata="videoLoadedEight" autoplay loop muted playsinline preload="none">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/flu9z4hgetu9gj8bmhnfa/elk.mov?rlkey=8opnrr2agml7bhz7sx5x47n1i&st=25zq6i62&dl=0"
+                                type="video/mp4">
+                            <source src="video/elk.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingEight">
+                            <source type="image/webp" srcset="img/elk.webp">
+                            <img loading="lazy" src="img/elk.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__warbler">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/warbler.mov" type="video/mp4">
+                            <source src="video/warbler.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__spider">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/spiders-2.mov" type="video/mp4">
+                            <source src="video/spiders-2.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__bug">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/bug.mov" type="video/mp4">
+                            <source src="video/bug.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__ant">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/ant.mov" type="video/mp4">
+                            <source src="video/ant.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__fox">
+                        <video @loadeddata="videoLoadedNine" autoplay loop muted playsinline preload="none">
+                            <source src="video/fox.mov" type="video/mp4">
+                            <source src="video/fox.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingNine">
+                            <source type="image/webp" srcset="img/fox.webp">
+                            <img loading="lazy" src="img/fox.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__shrew">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/shrew.mov" type="video/mp4">
+                            <source src="video/shrew.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__marten">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/marten.mov" type="video/mp4">
+                            <source src="video/marten.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__mouse">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/mouse.mov" type="video/mp4">
+                            <source src="video/mouse.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__swan">
+                        <video @loadeddata="videoLoadedTen" autoplay loop muted playsinline preload="none">
+                            <source src="video/swan.mov" type="video/mp4">
+                            <source src="video/swan.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTen">
+                            <source type="image/webp" srcset="img/collage-kola-swan.webp">
+                            <img loading="lazy" src="img/collage-kola-swan.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__broody">
+                        <video @loadeddata="videoLoadedTwelve" autoplay loop muted playsinline preload="none">
+                            <source src="video/broody.mov" type="video/mp4">
+                            <source src="video/broody.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTwelve">
+                            <source type="image/webp" srcset="img/broody.webp">
+                            <img loading="lazy" src="img/broody.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__grayling">
+                        <video @loadeddata="videoLoadedEleven" autoplay loop muted playsinline preload="none">
+                            <source src="video/grayling.mov" type="video/mp4">
+                            <source src="video/grayling.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingEleven">
+                            <source type="image/webp" srcset="img/collage-kola-grayling.webp">
+                            <img loading="lazy" src="img/collage-kola-grayling.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__char">
+                        <video @loadeddata="videoLoadedThirteen" autoplay loop muted playsinline preload="none">
+                            <source src="video/char.mov" type="video/mp4">
+                            <source src="video/char.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingThirteen">
+                            <source type="image/webp" srcset="img/char.webp">
+                            <img loading="lazy" src="img/char.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor.webp">
+                            <img loading="lazy" src="img/watercolor.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-2">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor.webp">
+                            <img loading="lazy" src="img/watercolor.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-3">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor-2.webp">
+                            <img loading="lazy" src="img/watercolor-2.png" alt="">
+                        </picture>
+                    </div>
+
                     <BaseDropdownInfo class="golden-eagle" title="Беркут" :is-modal="true" :color="'#71464E'"
                         :pulsation-color="'finn'"
                         :text="'Самый крупный из&nbsp;орлов: размах крыльев достигает 230&nbsp;см при длине тела до&nbsp;93&nbsp;см. Беркуты чувствительны к&nbsp;беспокойству со&nbsp;стороны человека, чаще обитают в&nbsp;горах и&nbsp;реже на&nbsp;равнинных ландшафтах. За&nbsp;последние столетия вид исчез из&nbsp;многих районов из-за массового истребления, пестицидов, увеличения числа городов и&nbsp;изъятия земель под&nbsp;хозяйственные нужды'" />
@@ -566,9 +790,6 @@
                     <div class="background background-6"></div>
                     <BaseCollageInfo class="grayling" title="Европейский хариус" :color="'#71464E'"
                         :text="'Вес рыбы может достигать 6,7&nbsp;кг'" />
-
-                    <div class="collage__swan"></div>
-                    <div class="collage__grayling"></div>
                 </div>
                 <BaseTextBlock class="mb-100">
                     <p class="mb-10">
@@ -608,7 +829,13 @@
                         и&nbsp;хитрость и&nbsp;ловкость Станислава, спасателям за&nbsp;несколько дней удалось освободить
                         кита.
                     </div>
-                    <picture class="kola__new-ward-img">
+
+                    <video @loadeddata="videoLoadedLast" autoplay loop muted playsinline preload="none">
+                        <source src="video/whale.mov" type="video/mp4">
+                        <source src="video/whale.webm" type="video/webm">
+                    </video>
+
+                    <picture class="kola__new-ward-img" v-if="!isLoadingLast">
                         <img loading="lazy" src="img/whale.png" alt="">
                     </picture>
 
@@ -855,6 +1082,20 @@ export default {
     },
     data() {
         return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+            isLoadingThree: false,
+            isLoadingFour: false,
+            isLoadingFive: false,
+            isLoadingSix: false,
+            isLoadingSeven: false,
+            isLoadingEight: false,
+            isLoadingNine: false,
+            isLoadingTen: false,
+            isLoadingEleven: false,
+            isLoadingTwelve: false,
+            isLoadingThirteen: false,
+            isLoadingLast: false,
             map1: 1,
             map2: 2,
             idMap: 1,
@@ -883,10 +1124,52 @@ export default {
     mounted() {
         this.$nextTick(function () {
             this.scrollAnimation()
-            this.parallax()
+            // this.parallax()
         })
     },
     methods: {
+        videoLoadedOne() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
+        videoLoadedThree() {
+            this.isLoadingThree = true;
+        },
+        videoLoadedFour() {
+            this.isLoadingFour = true;
+        },
+        videoLoadedFive() {
+            this.isLoadingFive = true;
+        },
+        videoLoadedSix() {
+            this.isLoadingSix = true;
+        },
+        videoLoadedSeven() {
+            this.isLoadingSeven = true;
+        },
+        videoLoadedEight() {
+            this.isLoadingEight = true;
+        },
+        videoLoadedNine() {
+            this.isLoadingNine = true;
+        },
+        videoLoadedTen() {
+            this.isLoadingTen = true;
+        },
+        videoLoadedEleven() {
+            this.isLoadingEleven = true;
+        },
+        videoLoadedTwelve() {
+            this.isLoadingTwelve = true;
+        },
+        videoLoadedThirteen() {
+            this.isLoadingThirteen = true;
+        },
+        videoLoadedLast() {
+            this.isLoadingLast = true;
+        },
         onResize() {
             this.isMobile = (window.innerWidth <= 768);
         },
@@ -1005,65 +1288,65 @@ export default {
                 },
             });
         },
-        parallax() {
-            if (window.innerWidth > 768) {
-                gsap.fromTo(".collage__golden-eagle",
-                    { y: 115 },
-                    {
-                        y: -15,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: 'top 100%',
-                            end: '10%',
-                            // markers: true,
-                            scrub: true
-                        },
+        // parallax() {
+        //     if (window.innerWidth > 768) {
+        //         gsap.fromTo(".collage__golden-eagle",
+        //             { y: 115 },
+        //             {
+        //                 y: -15,
+        //                 scrollTrigger: {
+        //                     trigger: ".collage",
+        //                     start: 'top 100%',
+        //                     end: '10%',
+        //                     // markers: true,
+        //                     scrub: true
+        //                 },
 
-                    });
+        //             });
 
-                gsap.fromTo(".collage__bluethroat",
-                    { y: 55 },
-                    {
-                        y: -15,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: '24% 100%',
-                            end: '29%',
-                            // markers: true,
-                            scrub: true
-                        },
+        //         gsap.fromTo(".collage__bluethroat",
+        //             { y: 55 },
+        //             {
+        //                 y: -15,
+        //                 scrollTrigger: {
+        //                     trigger: ".collage",
+        //                     start: '24% 100%',
+        //                     end: '29%',
+        //                     // markers: true,
+        //                     scrub: true
+        //                 },
 
-                    });
+        //             });
 
-                gsap.fromTo(".collage__swan",
-                    { y: 30 },
-                    {
-                        y: -10,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: '75% 100%',
-                            end: 'bottom',
-                            // markers: true,
-                            scrub: true
-                        },
+        //         gsap.fromTo(".collage__swan",
+        //             { y: 30 },
+        //             {
+        //                 y: -10,
+        //                 scrollTrigger: {
+        //                     trigger: ".collage",
+        //                     start: '75% 100%',
+        //                     end: 'bottom',
+        //                     // markers: true,
+        //                     scrub: true
+        //                 },
 
-                    });
+        //             });
 
-                gsap.fromTo(".collage__grayling",
-                    { y: 40 },
-                    {
-                        y: -10,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: '90% 100%',
-                            end: '100%',
-                            // markers: true,
-                            scrub: true
-                        },
+        //         gsap.fromTo(".collage__grayling",
+        //             { y: 40 },
+        //             {
+        //                 y: -10,
+        //                 scrollTrigger: {
+        //                     trigger: ".collage",
+        //                     start: '90% 100%',
+        //                     end: '100%',
+        //                     // markers: true,
+        //                     scrub: true
+        //                 },
 
-                    });
-            }
-        }
+        //             });
+        //     }
+        // }
     }
 }
 </script>
@@ -1774,83 +2057,468 @@ export default {
             }
         }
 
-        &__golden-eagle {
+        video {
             position: absolute;
-            width: 54rem;
-            height: 44.66rem;
-            top: 1rem;
-            left: 45rem;
-            background-image: url(../../public/img/collage-kola-golden-eagle.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
+            width: 100%;
+        }
 
-            @supports (background-image: url(../../public/img/collage-kola-golden-eagle.webp)) {
-                background-image: url(../../public/img/collage-kola-golden-eagle.webp);
+        &__redstart {
+            position: absolute;
+            width: 11rem;
+            top: 103rem;
+            left: 34.7rem;
+
+            @media (max-width: 768px) {
+                width: 16rem;
+                top: 173.3rem;
+                left: 27.7rem;
+            }
+
+            video {
+                top: -4rem;
+                left: -3.6rem;
+                width: 165%;
+
+                @media (max-width: 768px) {
+                    top: -6rem;
+                    left: -5.6rem;
+                }
+            }
+        }
+
+        &__warbler {
+            position: absolute;
+            width: 15rem;
+            top: 115.5rem;
+            left: 7.6rem;
+
+            video {
+                transform: scaleX(-1) rotate(-11deg);
             }
 
             @media (max-width: 768px) {
-                display: none;
+                width: 22rem;
+                top: 94rem;
+                left: 17rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__spider {
+            position: absolute;
+            width: 11rem;
+            top: 118.7rem;
+            left: 25rem;
+
+            video {
+                transform: rotate(135deg);
+            }
+
+            @media (max-width: 768px) {
+                position: absolute;
+                width: 15rem;
+                top: 547.7rem;
+                left: 71.5rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__bug {
+            position: absolute;
+            width: 9rem;
+            top: 131rem;
+            left: 13.5rem;
+
+            video {
+                transform: rotate(-53deg);
+
+                @media (max-width: 768px) {
+                    transform: rotate(-30deg);
+                }
+            }
+
+            @media (max-width: 768px) {
+                width: 15rem;
+                top: 216rem;
+                left: -1.5rem;
+            }
+        }
+
+        &__ant {
+            position: absolute;
+            width: 12rem;
+            top: 172rem;
+            left: 60.4rem;
+
+            video {
+                transform: rotate(-70deg);
+
+                @media (max-width: 768px) {
+                    transform: rotate(-30deg);
+                }
+            }
+
+            @media (max-width: 768px) {
+                width: 18rem;
+                top: 578rem;
+                left: 83rem;
+            }
+        }
+
+        &__shrew {
+            position: absolute;
+            width: 27rem;
+            top: 179rem;
+            left: 73.2rem;
+
+            video {
+                transform: rotate(-6deg);
+            }
+
+            @media (max-width: 768px) {
+                width: 36rem;
+                top: 460rem;
+                left: 1.2rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__mouse {
+            position: absolute;
+            width: 20rem;
+            top: 248rem;
+            left: -2rem;
+
+            video {
+                transform: scaleX(-1) rotate(17deg);
+            }
+
+            @media (max-width: 768px) {
+                width: 28rem;
+                top: 507rem;
+                left: -4rem;
+            }
+        }
+
+        &__marten {
+            position: absolute;
+            width: 43rem;
+            top: 221rem;
+            left: -3rem;
+
+            @media (max-width: 768px) {
+                width: 60rem;
+                top: 411rem;
+                left: -5rem;
+            }
+        }
+
+        &__fox {
+            position: absolute;
+            width: 42rem;
+            top: 187rem;
+            left: 22.2rem;
+
+            video {
+                top: -8rem;
+                left: -5.4rem;
+                width: 125%;
+
+                @media (max-width: 768px) {
+                    top: -12rem;
+                    left: -8.4rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                width: 64rem;
+                top: 341rem;
+                left: 26.2rem;
+            }
+        }
+
+        &__yurok {
+            position: absolute;
+            width: 22rem;
+            top: 111.5rem;
+            left: 67rem;
+
+            video {
+                top: 2.3rem;
+                left: -0.2rem;
+                width: 106%;
+                transform: scaleX(-1) rotate(-23deg);
+
+                @media (max-width: 768px) {
+                    top: 3.3rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                width: 29rem;
+                top: 227rem;
+                left: 60rem;
+            }
+        }
+
+        &__elk {
+            position: absolute;
+            width: 77rem;
+            top: 114.5rem;
+            left: 0rem;
+
+            @media (max-width: 768px) {
+                transform: scaleX(-1);
+                top: 243.5rem;
+                left: -6rem;
+                width: 104rem;
+            }
+
+            video {
+                top: 8.3rem;
+                left: -1rem;
+                width: 100%;
+
+                @media (max-width: 768px) {
+                    top: 10.3rem;
+                    left: -1rem;
+                }
+            }
+        }
+
+        &__squirrel {
+            position: absolute;
+            width: 15rem;
+            top: 89rem;
+            left: 17rem;
+
+            @media (max-width: 768px) {
+                transform: scaleX(-1);
+                top: 446rem;
+                left: 66rem;
+                width: 22rem;
+            }
+
+            video {
+                top: -2rem;
+                left: -4rem;
+                width: 145%;
+                transform: rotate(-12deg);
+
+                @media (max-width: 768px) {
+                    top: -4rem;
+                    left: -6rem;
+                    width: 150%;
+                }
+            }
+        }
+
+        &__white-browed {
+            position: absolute;
+            width: 31rem;
+            top: 40rem;
+            left: 59rem;
+
+            @media (max-width: 768px) {
+                width: 42rem;
+                top: 81rem;
+                left: 54rem;
+            }
+
+            video {
+                top: -3rem;
+                width: 106%;
+            }
+        }
+
+        &__golden-eagle {
+            position: absolute;
+            width: 54rem;
+            top: 1rem;
+            left: 45rem;
+
+            @media (max-width: 768px) {
+                width: 82rem;
+                top: 16rem;
+                left: -8rem;
+                transform: scaleX(-1);
+            }
+
+            video {
+                top: -5rem;
+
+                @media (max-width: 768px) {
+                    top: -8rem;
+                }
             }
         }
 
         &__bluethroat {
             position: absolute;
             width: 23.9rem;
-            height: 20.7rem;
             top: 80.5rem;
             left: 62.5rem;
-            background-image: url(../../public/img/collage-kola-bluethroat.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
-
-            @supports (background-image: url(../../public/img/collage-kola-bluethroat.webp)) {
-                background-image: url(../../public/img/collage-kola-bluethroat.webp);
-            }
 
             @media (max-width: 768px) {
-                display: none;
+                width: 34rem;
+                top: 25rem;
+                left: 58rem;
+            }
+
+            video {
+                transform: scaleX(-1);
+                left: -5rem;
+                width: 117%;
+                top: -6rem;
+
+                @media (max-width: 768px) {
+                    left: -8rem;
+                    top: -8rem;
+                }
+            }
+        }
+
+        &__tap-dance {
+            position: absolute;
+            width: 15rem;
+            top: 60.5rem;
+            left: 39rem;
+
+            @media (max-width: 768px) {
+                width: 22rem;
+                top: 126.5rem;
+                left: 35rem;
+            }
+
+            video {
+                transform: scaleX(-1) rotate(-16deg);
+                width: 119%;
+                left: -0.5rem;
+                top: -1.9rem;
+
+                @media (max-width: 768px) {
+                    width: 121%;
+                    top: -2.9rem;
+                }
             }
         }
 
         &__swan {
             position: absolute;
-            width: 41.32rem;
-            height: 30.2088rem;
+            width: 41.3rem;
             top: 261.5rem;
             left: 3.6rem;
-            background-image: url(../../public/img/collage-kola-swan.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
 
-            @supports (background-image: url(../../public/img/collage-kola-swan.webp)) {
-                background-image: url(../../public/img/collage-kola-swan.webp);
+            @media (max-width: 768px) {
+                width: 64.3rem;
+                top: 621.5rem;
+                left: -8.4rem;
+            }
+        }
+
+        &__broody {
+            position: absolute;
+            width: 28rem;
+            top: 555.3rem;
+            left: 62.7rem;
+
+            video {
+                width: 138%;
+                top: -4rem;
+                left: -6rem;
             }
 
             @media (max-width: 768px) {
-                display: none;
+                width: 39rem;
+                top: 615.3rem;
             }
         }
 
         &__grayling {
             position: absolute;
             width: 34.7223rem;
-            height: 25.4866rem;
             top: 299.7rem;
             left: 63.7rem;
-            background-image: url(../../public/img/collage-kola-grayling.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
 
-            @supports (background-image: url(../../public/img/collage-kola-grayling.webp)) {
-                background-image: url(../../public/img/collage-kola-grayling.webp);
+            video {
+                width: 86%;
+                top: 4rem;
+                left: 3rem;
+                transform: rotate(-9deg);
+
+                @media (max-width: 768px) {
+                    top: 6rem;
+                    left: 5rem;
+                }
             }
 
             @media (max-width: 768px) {
+                top: 736.7rem;
+                width: 54.7223rem;
+                left: 41.7rem;
+            }
+        }
+
+        &__char {
+            position: absolute;
+            width: 32rem;
+            top: 307.3rem;
+            left: 35.7rem;
+
+            video {
+                width: 117%;
+                top: 1rem;
+                left: -2rem;
+                transform: rotate(10deg);
+            }
+
+            @media (max-width: 768px) {
+                top: 738.7rem;
+                width: 46.7223rem;
+                left: 2.7rem;
+            }
+        }
+
+        &__watercolor {
+            position: absolute;
+            top: 5rem;
+            left: 63rem;
+            width: 35rem;
+            // opacity: 0.64;
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
+                top: 29rem;
+                left: 1rem;
+                width: 59rem;
+            }
+        }
+
+        &__watercolor-2 {
+            position: absolute;
+            top: 82rem;
+            left: 65rem;
+            width: 38rem;
+            // opacity: 0.64;
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
                 display: none;
+            }
+        }
+
+        &__watercolor-3 {
+            position: absolute;
+            top: 117rem;
+            left: 20rem;
+            width: 64rem;
+            // opacity: 0.64;
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
+                top: 246rem;
+                left: -20rem;
+                width: 85rem;
             }
         }
 
@@ -2701,6 +3369,20 @@ export default {
                 width: unset;
                 font-size: 4.53334rem;
                 text-align: center;
+            }
+        }
+
+        video {
+            position: absolute;
+            top: -3.5rem;
+            left: -19.366rem;
+            width: 57.25rem;
+            z-index: 2;
+
+            @media (max-width: 768px) {
+                width: 93.5rem;
+                left: -7.5rem;
+                top: -28.5rem;
             }
         }
 

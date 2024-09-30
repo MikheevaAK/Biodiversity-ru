@@ -11,7 +11,7 @@
 
             <section class="scroll mb-100">
                 <div class="scroll-bg bg-1">
-                    <div class="wrap-a">
+                    <!-- <div class="wrap-a">
                         <video class="fox" autoplay loop muted playsinline>
                             <source src="video/fox.mov" type="video/mp4">
                             <source src="video/fox.webm" type="video/webm">
@@ -32,13 +32,23 @@
                                 type="video/mp4">
                             <source src="video/eagle.webm" type="video/webm">
                         </video>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="scroll-bg bg-2">
-                    <div class="wrap-a">
+                    <!-- <div class="wrap-a">
                         <video class="marten" autoplay loop muted playsinline>
                             <source src="video/marten.mov" type="video/mp4">
                             <source src="video/marten.webm" type="video/webm">
+                        </video>
+
+                        <video class="sapsan" autoplay loop muted playsinline>
+                            <source src="https://www.dropbox.com/scl/fi/vrryrs1jjqj68hsho0xop/sapsan.mov?rlkey=4kdmze87pgabpy44pjygwiybn&st=u28lqjyw&dl=0" type="video/mp4">
+                            <source src="video/sapsan.webm" type="video/webm">
+                        </video>
+
+                        <video class="elk" autoplay loop muted playsinline>
+                            <source src="https://www.dropbox.com/scl/fi/flu9z4hgetu9gj8bmhnfa/elk.mov?rlkey=8opnrr2agml7bhz7sx5x47n1i&st=25zq6i62&dl=0" type="video/mp4">
+                            <source src="video/elk.webm" type="video/webm">
                         </video>
 
                         <video class="golden-eagle" autoplay loop muted playsinline>
@@ -47,7 +57,7 @@
                                 type="video/mp4">
                             <source src="video/golden-eagle.webm" type="video/webm">
                         </video>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="scroll-bg bg-3">
                     <div class="wrap-a">
@@ -67,6 +77,17 @@
                             <source src="video/harrier.mov" type="video/mp4">
                             <source src="video/harrier.webm" type="video/webm">
                         </video>
+
+                        <video class="sapsan" autoplay loop muted playsinline>
+                            <source src="https://www.dropbox.com/scl/fi/vrryrs1jjqj68hsho0xop/sapsan.mov?rlkey=4kdmze87pgabpy44pjygwiybn&st=u28lqjyw&dl=0" type="video/mp4">
+                            <source src="video/sapsan.webm" type="video/webm">
+                        </video>
+
+                        <video class="elk" autoplay loop muted playsinline>
+                            <source src="https://www.dropbox.com/scl/fi/flu9z4hgetu9gj8bmhnfa/elk.mov?rlkey=8opnrr2agml7bhz7sx5x47n1i&st=25zq6i62&dl=0" type="video/mp4">
+                            <source src="video/elk.webm" type="video/webm">
+                        </video>
+
                         <video class="golden-eagle" autoplay loop muted playsinline>
                             <source
                                 src="https://www.dropbox.com/scl/fi/j0cj8u1oullb932g8x0ki/golden-eagle.mov?rlkey=z5wykceu6wquf70bf55xeg8qh&st=5vrz895u&dl=0"
@@ -81,6 +102,7 @@
                         </video>
                     </div>
                 </div>
+        
                 <div class="scroll-wrap">
                     <div class="scroll-card card-1 text-block__descr">
                         <BaseTextBlock title="Сбор данных в зонах воздействия">
@@ -363,6 +385,13 @@
                         ИПСЭ&nbsp;&mdash; это не&nbsp;приговор, а&nbsp;сигнал к&nbsp;действию.
                     </div>
                 </div>
+
+                <video autoplay loop muted playsinline>
+                    <source
+                        src="https://www.dropbox.com/scl/fi/9j5taserzlha5nizn6kd5/indicator-drop.mov?rlkey=7mgiewnlelu4nr3g0ss1ijxbb&st=7x1bnu5g&dl=0"
+                        type="video/mp4">
+                    <source src="video/indicator-drop.webm" type="video/webm">
+                </video>
             </div>
 
             <BaseTextQuotes class="mb-60 indicator__impact">
@@ -423,6 +452,7 @@ export default {
     data() {
         return {
             isLoadingOne: false,
+            isLoadingTwo: false,
             oneScrollTrigger: null,
             twoScrollTrigger: null,
             threeScrollTrigger: null,
@@ -447,6 +477,9 @@ export default {
     methods: {
         videoLoaded() {
             this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
         },
         scrollMobile() {
             const collageItems = Array.from(document.querySelectorAll(".scroll-bg.active"))
@@ -820,6 +853,23 @@ export default {
                     left: 20rem;
                 }
 
+                .sapsan {
+                    width: 12%;
+                    position: fixed;
+                    z-index: 2;
+                    left: 1rem;
+                    bottom: 28rem;
+                    transform: scaleX(-1) rotate(-29deg);
+                }
+
+                .elk {
+                    width: 16%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 6rem;
+                    left: 8rem;
+                }
+
                 &.active {
                     .wrap-a {
                         display: block;
@@ -889,6 +939,23 @@ export default {
                     left: 36rem;
                 }
 
+                .sapsan {
+                    width: 12%;
+                    position: fixed;
+                    z-index: 2;
+                    left: 1rem;
+                    bottom: 28rem;
+                    transform: scaleX(-1) rotate(-29deg);
+                }
+
+                .elk {
+                    width: 16%;
+                    position: fixed;
+                    z-index: 2;
+                    bottom: 6rem;
+                    left: 8rem;
+                }
+
                 &.active {
                     .wrap-a {
                         display: block;
@@ -909,10 +976,21 @@ export default {
                         bottom: 12rem;
                     }
 
+                    .elk {
+                        position: absolute;
+                        bottom: 7rem;
+                    }
+
+                    .sapsan {
+                        position: absolute;
+                        bottom: 29rem;
+                    }
+
                     .harrier {
                         position: absolute;
                         bottom: 14rem;
                     }
+
                     .golden-eagle {
                         position: absolute;
                         bottom: 28rem;
@@ -1423,6 +1501,7 @@ export default {
     }
 
     &__drop {
+        position: relative;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -1444,6 +1523,20 @@ export default {
 
             &.mb-60 {
                 margin-bottom: 4.8rem;
+            }
+        }
+
+        video {
+            position: absolute;
+            width: 28.9rem;
+            top: -0.7rem;
+            right: -3.47rem;
+
+            @media (max-width: 768px) {
+                right: -13.4rem;
+                top: unset;
+                bottom: 4.5rem;
+                width: 123%;
             }
         }
 
