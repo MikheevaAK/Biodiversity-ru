@@ -355,14 +355,14 @@
                             <source type="image/webp" srcset="img/mouse.webp">
                             <img loading="lazy" src="img/mouse.png" alt="">
                         </picture>
-                        
+
                         <div class="position-info__descr">
                             Рядом с&nbsp;Быстринским комбинатом учёные отметили высочайший уровень доминирования,
                             поэтому выбрали полёвку Максимовича потенциально индикаторным видом.
                         </div>
 
                         <BaseDropdownInfo :title="'Полёвка Максимовича'" :pulsation-color="'Green-Mist'"
-                        :text="'Доминирует среди других 10&nbsp;видов грызунов на&nbsp;территории всех зон воздействия дивизиона. Рядом с&nbsp;Быстринским комбинатом учёные отметили высочайший уровень доминирования, поэтому выбрали полёвку Максимовича потенциально индикаторным видом. А&nbsp;в&nbsp;зоне среднего воздействия её&nbsp;численность увеличивается за&nbsp;счёт прироста разнообразия микромест обитаний'" />
+                            :text="'Доминирует среди других 10&nbsp;видов грызунов на&nbsp;территории всех зон воздействия дивизиона. Рядом с&nbsp;Быстринским комбинатом учёные отметили высочайший уровень доминирования, поэтому выбрали полёвку Максимовича потенциально индикаторным видом. А&nbsp;в&nbsp;зоне среднего воздействия её&nbsp;численность увеличивается за&nbsp;счёт прироста разнообразия микромест обитаний'" />
                     </div>
                 </BaseTextBlock>
                 <div class="collage mb-100">
@@ -370,10 +370,268 @@
                         <BaseCollageInfo text="Охраняемые виды" :color="'#71464E'" />
                         <BaseCollageInfo text="Индикаторные виды" />
                     </div>
-                    <div class="collage__eagle"></div>
-                    <div class="collage__harrier"></div>
-                    <div class="collage__fish"></div>
-                    <div class="collage__curlew"></div>
+                    <div class="collage__eagle">
+                        <video @loadeddata="videoLoadedOne" autoplay loop muted="true" playsinline="true"
+                            preload="none">
+                            <source src="video/spotted-eagle.mov" type="video/mp4">
+                            <source src="video/spotted-eagle.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingOne">
+                            <source type="image/webp" srcset="img/collage-2-eagle.webp">
+                            <img loading="lazy" src="img/collage-2-eagle.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="collage__harrier">
+                        <video @loadeddata="videoLoadedTwo" autoplay loop muted="true" playsinline="true"
+                            preload="none">
+                            <source src="video/harrier.mov" type="video/mp4">
+                            <source src="video/harrier.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTwo">
+                            <source type="image/webp" srcset="img/collage-2-harrier.webp">
+                            <img loading="lazy" src="img/collage-2-harrier.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="collage__fish">
+                        <video @loadeddata="videoLoadedThree" autoplay loop muted="true" playsinline="true"
+                            preload="none">
+                            <source src="video/bitterling.mov" type="video/mp4">
+                            <source src="video/bitterling.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingThree">
+                            <source type="image/webp" srcset="img/collage-2-fish.webp">
+                            <img loading="lazy" src="img/collage-2-fish.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="collage__curlew">
+                        <video @loadeddata="videoLoadedFour" autoplay loop muted="true" playsinline="true"
+                            preload="none">
+                            <source src="video/curlew.mov" type="video/mp4">
+                            <source src="video/curlew.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingFour">
+                            <source type="image/webp" srcset="img/collage-2-curlew.webp">
+                            <img loading="lazy" src="img/collage-2-curlew.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__dubrovnik">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/dubrovnik.mov" type="video/mp4">
+                            <source src="video/dubrovnik.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__warbler">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/warbler-2.mov" type="video/mp4">
+                            <source src="video/warbler-2.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__deep">
+                        <video @loadeddata="videoLoadedFive" autoplay loop muted="true" playsinline="true">
+                            <source src="video/deep.mov" type="video/mp4">
+                            <source src="video/deep.webm" type="video/webm">
+                        </video>
+                        <picture v-if="!isLoadingFive">
+                            <source type="image/webp" srcset="img/deep.webp">
+                            <img loading="lazy" src="img/deep.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__сolumns">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/lbrr28qgrh7oo87vqg50l/columns.mov?rlkey=apl2jxye9g1afmv2q58g75sd0&st=pww80lyh&dl=0"
+                                type="video/mp4">
+                            <source src="video/columns.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__bug">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/bug.mov" type="video/mp4">
+                            <source src="video/bug.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__shrew">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/shrew.mov" type="video/mp4">
+                            <source src="video/shrew.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__ant">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/ant.mov" type="video/mp4">
+                            <source src="video/ant.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__fox">
+                        <video @loadeddata="videoLoadedSix" autoplay loop muted="true" playsinline="true"
+                            preload="none">
+                            <source src="video/fox.mov" type="video/mp4">
+                            <source src="video/fox.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingSix">
+                            <source type="image/webp" srcset="img/fox.webp">
+                            <img loading="lazy" src="img/fox.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__hare">
+                        <video @loadeddata="videoLoadedSeven" autoplay loop muted="true" playsinline="true">
+                            <source src="video/hare.mov" type="video/mp4">
+                            <source src="video/hare.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingSeven">
+                            <source type="image/webp" srcset="img/hare.webp">
+                            <img loading="lazy" src="img/hare.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__wolf">
+                        <video @loadeddata="videoLoadedEight" autoplay loop muted="true" playsinline="true">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/vp274brwbk720e1tkrz6e/wolf.mov?rlkey=29gmbdpow4sn2o0jq65uj9mwr&st=op3kl63o&dl=0"
+                                type="video/mp4">
+                            <source src="video/wolf.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingEight">
+                            <source type="image/webp" srcset="img/wolf.webp">
+                            <img loading="lazy" src="img/wolf.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__siberian">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/siberian.mov" type="video/mp4">
+                            <source src="video/siberian.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__puffy">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/puffy.mov" type="video/mp4">
+                            <source src="video/puffy.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__muscovite">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/muscovite.mov" type="video/mp4">
+                            <source src="video/muscovite.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__ermine">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/ermine.mov" type="video/mp4">
+                            <source src="video/ermine.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__gudgeon">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/gudgeon.mov" type="video/mp4">
+                            <source src="video/gudgeon.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__crane">
+                        <video @loadeddata="videoLoadedNine" autoplay loop muted="true" playsinline="true">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/gylayil752eyw0l9gz2is/crane.mov?rlkey=hemk4pq20dsuyhxsqdgz1kifo&st=ssesqmvw&dl=0"
+                                type="video/mp4">
+                            <source src="video/crane.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingNine">
+                            <source type="image/webp" srcset="img/crane.webp">
+                            <img loading="lazy" src="img/crane.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__killer-whale">
+                        <video @loadeddata="videoLoadedTen" autoplay loop muted="true" playsinline="true">
+                            <source src="video/killer-whale.mov" type="video/mp4">
+                            <source src="video/killer-whale.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTen">
+                            <source type="image/webp" srcset="img/killer-whale.webp">
+                            <img loading="lazy" src="img/killer-whale.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__mouse-2">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/mouse-2.mov" type="video/mp4">
+                            <source src="video/mouse-2.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__mouse-3">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/mouse-3.mov" type="video/mp4">
+                            <source src="video/mouse-3.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__wren">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/wren.mov" type="video/mp4">
+                            <source src="video/wren.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__grouse">
+                        <video autoplay loop muted="true" playsinline="true">
+                            <source src="video/grouse.mov" type="video/mp4">
+                            <source src="video/grouse.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__watercolor">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor.webp">
+                            <img loading="lazy" src="img/watercolor.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-2">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor.webp">
+                            <img loading="lazy" src="img/watercolor.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-3">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor-6.webp">
+                            <img loading="lazy" src="img/watercolor-6.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-4">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor-7.webp">
+                            <img loading="lazy" src="img/watercolor-7.png" alt="">
+                        </picture>
+                    </div>
+
+                    <BaseCollageInfo class="myxomycetes" title="Миксомицeты" :color="'#C5C5C6'"
+                        :text="'На&nbsp;субстрате с&nbsp;полигона ЗБ_8 была выращена колония ползающих грибов нового для науки вида рода Physarum Pers.'" />
 
                     <BaseCollageInfo class="eagle" title="Большой подорлик" :color="'#71464E'"
                         :text="'Размах крыльев в&nbsp;2,5&nbsp;раза длиннее тела&nbsp;—&nbsp;около 180&nbsp;см'" />
@@ -721,6 +979,16 @@ export default {
     },
     data() {
         return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+            isLoadingThree: false,
+            isLoadingFour: false,
+            isLoadingFive: false,
+            isLoadingSix: false,
+            isLoadingSeven: false,
+            isLoadingEight: false,
+            isLoadingNine: false,
+            isLoadingTen: false,
             isMobile: (window.innerWidth <= 768),
             circales: [
                 {
@@ -738,10 +1006,39 @@ export default {
     mounted() {
         this.$nextTick(function () {
             this.scrollAnimation()
-            this.parallax()
         })
     },
     methods: {
+        videoLoadedOne() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
+        videoLoadedThree() {
+            this.isLoadingThree = true;
+        },
+        videoLoadedFour() {
+            this.isLoadingFour = true;
+        },
+        videoLoadedFive() {
+            this.isLoadingFive = true;
+        },
+        videoLoadedSix() {
+            this.isLoadingSix = true;
+        },
+        videoLoadedSeven() {
+            this.isLoadingSeven = true;
+        },
+        videoLoadedEight() {
+            this.isLoadingEight = true;
+        },
+        videoLoadedNine() {
+            this.isLoadingNine = true;
+        },
+        videoLoadedTen() {
+            this.isLoadingTen = true;
+        },
         scrollAnimation() {
             const collageItems = Array.from(document.querySelectorAll(".text-block__wrap"));
             collageItems.forEach((elem) => {
@@ -782,65 +1079,6 @@ export default {
                     });
             });
         },
-        parallax() {
-            if (window.innerWidth > 768) {
-                gsap.fromTo(".collage__eagle",
-                    { y: 115 },
-                    {
-                        y: -20,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: 'top 100%',
-                            end: '12%',
-                            // markers: true,
-                            scrub: true
-                        },
-
-                    });
-
-                gsap.fromTo(".collage__harrier",
-                    { y: 55 },
-                    {
-                        y: -15,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: '15% 100%',
-                            end: '22%',
-                            // markers: true,
-                            scrub: true
-                        },
-
-                    });
-
-                gsap.fromTo(".collage__fish",
-                    { y: 35 },
-                    {
-                        y: -12,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: '93% 100%',
-                            end: 'bottom',
-                            // markers: true,
-                            scrub: true
-                        },
-
-                    });
-
-                gsap.fromTo(".collage__curlew",
-                    { y: 50 },
-                    {
-                        y: -15,
-                        scrollTrigger: {
-                            trigger: ".collage",
-                            start: '78% 100%',
-                            end: '88%',
-                            // markers: true,
-                            scrub: true
-                        },
-
-                    });
-            }
-        }
     }
 }
 </script>
@@ -1077,23 +1315,26 @@ export default {
             }
         }
 
+        video {
+            position: absolute;
+            width: 100%;
+        }
+
         &__eagle {
             position: absolute;
             top: 8.4rem;
             left: 9.9rem;
             width: 43.4723rem;
-            height: 44.028rem;
-            background-image: url(../../public/img/collage-2-eagle.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
 
-            @supports (background-image: url(../../public/img/collage-2-eagle.webp)) {
-                background-image: url(../../public/img/collage-2-eagle.webp);
+            video {
+                top: -3rem;
+                left: -1rem;
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 64.4rem;
+                left: 23.9rem;
+                width: 80.4723rem;
             }
         }
 
@@ -1102,18 +1343,22 @@ export default {
             top: 45.4rem;
             left: 1.1rem;
             width: 38.405rem;
-            height: 54.306rem;
-            background-image: url(../../public/img/collage-2-harrier.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
 
-            @supports (background-image: url(../../public/img/collage-2-harrier.webp)) {
-                background-image: url(../../public/img/collage-2-harrier.webp);
+            video {
+                top: 8rem;
+                transform: rotate(14deg);
+                left: -1rem;
+
+                @media (max-width: 768px) {
+                    top: 12rem;
+                }
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 11.4rem;
+                left: -1.9rem;
+                transform: scaleX(-1);
+                width: 58.405rem;
             }
         }
 
@@ -1122,18 +1367,18 @@ export default {
             top: 305rem;
             left: 45.4rem;
             width: 36.667rem;
-            height: 34.67rem;
-            background-image: url(../../public/img/collage-2-curlew.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
 
-            @supports (background-image: url(../../public/img/collage-2-curlew.webp)) {
-                background-image: url(../../public/img/collage-2-curlew.webp);
+            video {
+                transform: scaleX(-1);
+                width: 120%;
+                top: -4rem;
+                left: -3rem;
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 1164rem;
+                left: 36.4rem;
+                width: 68.667rem;
             }
         }
 
@@ -1142,18 +1387,443 @@ export default {
             top: 356.6rem;
             left: 61.8rem;
             width: 26.53rem;
-            height: 20rem;
-            background-image: url(../../public/img/collage-2-fish.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom;
 
-            @supports (background-image: url(../../public/img/collage-2-fish.webp)) {
-                background-image: url(../../public/img/collage-2-fish.webp);
+            video {
+                width: 167%;
+                top: 1rem;
+                transform: rotate(5deg);
+                left: -19rem;
+
+                @media (max-width: 768px) {
+                    top: 2rem;
+                    left: -33rem;
+                }
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 1334.6rem;
+                left: 54.8rem;
+                width: 48.53rem;
+            }
+        }
+
+        &__dubrovnik {
+            position: absolute;
+            top: 52rem;
+            left: 59.8rem;
+            width: 19rem;
+            transform: rotate(-8deg);
+
+            @media (max-width: 768px) {
+                top: 155rem;
+                left: 12.8rem;
+                width: 36rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__warbler {
+            position: absolute;
+            top: 195.7rem;
+            left: 35.4rem;
+            width: 48rem;
+
+            @media (max-width: 768px) {
+                top: 309.7rem;
+                left: 6.4rem;
+                width: 37rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__deep {
+            position: absolute;
+            top: 106.6rem;
+            left: -0.2rem;
+            width: 44.53rem;
+
+            video {
+                width: 113%;
+                top: -7rem;
+                left: -4rem;
+
+                @media (max-width: 768px) {
+                    top: -12rem;
+                    left: -7rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                top: 392.6rem;
+                left: 3.8rem;
+                width: 86.53rem;
+            }
+        }
+
+        &__сolumns {
+            position: absolute;
+            top: 40rem;
+            left: 40rem;
+            width: 41rem;
+
+            @media (max-width: 768px) {
+                top: 336rem;
+                left: 14rem;
+                width: 95rem;
+            }
+        }
+
+        &__bug {
+            position: absolute;
+            top: 165.5rem;
+            left: 26.6rem;
+            width: 12rem;
+            transform: rotate(-28deg);
+
+
+            @media (max-width: 768px) {
+                top: 813.5rem;
+                left: 29.6rem;
+                width: 26rem;
+                transform: rotate(-52deg);
+            }
+        }
+
+        &__shrew {
+            position: absolute;
+            top: 176rem;
+            left: 48rem;
+            width: 24rem;
+            transform: rotate(-9deg);
+
+
+            @media (max-width: 768px) {
+                top: 865rem;
+                left: 58rem;
+                width: 48rem;
+            }
+        }
+
+        &__ant {
+            position: absolute;
+            top: 208rem;
+            left: 42rem;
+            width: 11rem;
+            transform: rotate(84deg);
+
+
+            @media (max-width: 768px) {
+                top: 771rem;
+                left: 70rem;
+                width: 25rem;
+                transform: rotate(92deg) scaleX(-1);
+            }
+        }
+
+        &__fox {
+            position: absolute;
+            top: 184.6rem;
+            left: 53rem;
+            width: 44rem;
+
+            video {
+                width: 125%;
+                top: -8rem;
+                left: -6rem;
+
+                @media (max-width: 768px) {
+                    top: -15rem;
+                    left: -10rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                top: 679.6rem;
+                left: 11rem;
+                width: 75rem;
+            }
+        }
+
+        &__hare {
+            position: absolute;
+            top: 237rem;
+            left: 19rem;
+            width: 16rem;
+
+            video {
+                width: 176%;
+                top: -5rem;
+                left: -6rem;
+
+                @media (max-width: 768px) {
+                    width: 181%;
+                    top: -11rem;
+                    left: -13rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                top: 514rem;
+                left: 62rem;
+                width: 31rem;
+            }
+        }
+
+        &__wolf {
+            position: absolute;
+            top: 215rem;
+            left: 33rem;
+            width: 67rem;
+
+            video {
+                width: 92%;
+                top: -3rem;
+                left: -3rem;
+
+                @media (max-width: 768px) {
+                    width: 90%;
+                    top: -4rem;
+                    left: -5rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                top: 888rem;
+                left: 0rem;
+                width: 115rem;
+            }
+        }
+
+        &__siberian {
+            position: absolute;
+            top: 93rem;
+            left: 78rem;
+            width: 16rem;
+
+            @media (max-width: 768px) {
+                top: 276rem;
+                left: 73rem;
+                width: 33rem;
+            }
+        }
+
+        &__puffy {
+            position: absolute;
+            top: 68rem;
+            left: 72rem;
+            width: 18rem;
+            transform: scaleX(-1);
+
+
+            @media (max-width: 768px) {
+                top: 226rem;
+                left: 22rem;
+                width: 33rem;
+            }
+        }
+
+        &__muscovite {
+            position: absolute;
+            top: 112rem;
+            left: 69rem;
+            width: 15rem;
+            transform: scaleX(-1);
+
+            @media (max-width: 768px) {
+                top: 192rem;
+                left: 67rem;
+                width: 33rem;
+            }
+        }
+
+        &__ermine {
+            position: absolute;
+            top: 268rem;
+            left: 65rem;
+            width: 34rem;
+
+            @media (max-width: 768px) {
+                top: 1093rem;
+                left: 43rem;
+                width: 62rem;
+            }
+        }
+
+        &__gudgeon {
+            position: absolute;
+            top: 357rem;
+            left: 31rem;
+            width: 52rem;
+
+            @media (max-width: 768px) {
+                top: 1349rem;
+                left: 6rem;
+                width: 95rem;
+            }
+        }
+
+        &__crane {
+            position: absolute;
+            top: 316rem;
+            left: 4rem;
+            width: 28rem;
+
+            video {
+                width: 200%;
+                top: -18rem;
+                left: -12rem;
+                transform: scaleX(-1);
+
+                @media (max-width: 768px) {
+                    width: 190%;
+                    top: -32rem;
+                    left: -21rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                top: 1248rem;
+                left: 3rem;
+                width: 55rem;
+            }
+        }
+
+        &__killer-whale {
+            position: absolute;
+            top: 343rem;
+            left: 75rem;
+            width: 20rem;
+
+            video {
+                width: 150%;
+                top: -5rem;
+                left: -5rem;
+
+                @media (max-width: 768px) {
+                    width: 157%;
+                    top: -10rem;
+                    left: -10rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                top: 1304rem;
+                left: 57rem;
+                width: 36rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__mouse-2 {
+            position: absolute;
+            top: 285rem;
+            left: 51rem;
+            width: 20rem;
+
+            @media (max-width: 768px) {
+                top: 1008rem;
+                left: -6rem;
+                width: 50rem;
+            }
+        }
+
+        &__mouse-3 {
+            position: absolute;
+            top: 294rem;
+            left: -3rem;
+            width: 20rem;
+            transform: scaleX(-1);
+
+            @media (max-width: 768px) {
+                top: 543rem;
+                left: 3rem;
+                width: 37rem;
+                transform: rotate(-8deg);
+            }
+        }
+
+        &__grouse {
+            position: absolute;
+            top: 265rem;
+            left: 28rem;
+            width: 27rem;
+
+            @media (max-width: 768px) {
+                top: 644rem;
+                left: 4rem;
+                width: 48rem;
+
+            }
+        }
+
+        &__wren {
+            position: absolute;
+            top: 269rem;
+            left: -1rem;
+            width: 25rem;
+
+            @media (max-width: 768px) {
+                top: 727rem;
+                left: -4rem;
+                width: 47rem;
+            }
+        }
+
+        &__watercolor {
+            position: absolute;
+            top: 18rem;
+            left: 2rem;
+            width: 42rem;
+            transform: rotate(154deg);
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
+                top: 65rem;
+                left: 16rem;
+                width: 58rem;
+            }
+        }
+
+        &__watercolor-2 {
+            position: absolute;
+            top: 88rem;
+            left: 63rem;
+            width: 35rem;
+            transform: rotate(154deg);
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
+                top: 262rem;
+                left: -3rem;
+                width: 59rem;
+            }
+        }
+
+        &__watercolor-3 {
+            position: absolute;
+            top: 125rem;
+            left: 0rem;
+            width: 50rem;
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
+                top: 425rem;
+                width: 83rem;
+            }
+        }
+
+        &__watercolor-4 {
+            position: absolute;
+            top: 294rem;
+            left: 46rem;
+            width: 43rem;
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
+                top: 1150rem;
+                left: 37rem;
+                width: 75rem;
+
             }
         }
 
@@ -1166,6 +1836,16 @@ export default {
                 width: 42rem;
                 top: 104rem;
                 left: 16rem;
+            }
+        }
+
+        .myxomycetes {
+            width: 14rem;
+            top: 159rem;
+            left: 7rem;
+
+            @media (max-width: 768px) {
+                display: none;
             }
         }
 
@@ -2122,7 +2802,7 @@ export default {
             position: absolute;
             display: block;
             width: 11.5rem;
-            height: auto;    
+            height: auto;
             top: 5rem;
             left: 1.81rem;
             z-index: 1;
