@@ -380,9 +380,113 @@
                         <BaseCollageInfo text="Индикаторные виды" />
                     </div>
 
-                    <div class="collage__eagle"></div>
-                    <div class="collage__merlin"></div>
-                    <div class="collage__loach"></div>
+                    <div class="collage__eagle">
+                        <video @loadeddata="videoLoadedOne" autoplay loop muted playsinline preload="none">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/7ofqzyjl9ja3h3ffyha6h/eagle.mov?rlkey=6xql3op0vtdtcd3s3i6iv0bzu&st=evc04g2d&dl=0"
+                                type="video/mp4">
+                            <source src="video/eagle.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingOne">
+                            <source type="image/webp" srcset="img/collage-eagle.webp">
+                            <img loading="lazy" src="img/collage-eagle.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="collage__merlin">
+                        <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline preload="none">
+                            <source src="video/merlin.mov" type="video/mp4">
+                            <source src="video/merlin.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTwo">
+                            <source type="image/webp" srcset="img/merlin.webp">
+                            <img loading="lazy" src="img/merlin.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__sapsan">
+                        <video @loadeddata="videoLoadedThree" autoplay loop muted playsinline preload="none">
+                            <source src="video/sapsan.mov" type="video/mp4">
+                            <source src="video/sapsan.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="isLoadingThree">
+                            <source type="image/webp" srcset="img/sapsan.webp">
+                            <img loading="lazy" src="img/sapsan.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__deep">
+                        <video @loadeddata="videoLoadedFour" autoplay loop muted playsinline preload="none">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/06c8xlgu43sqhvnqpw8uk/deep-big.mov?rlkey=3q9y6yv0o6xx69y8nmqkrisy2&st=kdczywm0&dl=0"
+                                type="video/mp4">
+                            <source src="video/deep-big.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingFour">
+                            <source type="image/webp" srcset="img/deep-big.webp">
+                            <img loading="lazy" src="img/deep-big.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__shrew">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/shrew.mov" type="video/mp4">
+                            <source src="video/shrew.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__warbler">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/warbler.mov" type="video/mp4">
+                            <source src="video/warbler.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__warbler-2">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/warbler-2.mov" type="video/mp4">
+                            <source src="video/warbler-2.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__lentils">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/lentils.mov" type="video/mp4">
+                            <source src="video/lentils.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__oatmeal">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/oatmeal.mov" type="video/mp4">
+                            <source src="video/oatmeal.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__white-partridge">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/white-partridge.mov" type="video/mp4">
+                            <source src="video/white-partridge.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__char">
+                        <video @loadeddata="videoLoadedThirteen" autoplay loop muted playsinline preload="none">
+                            <source src="video/char.mov" type="video/mp4">
+                            <source src="video/char.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingThirteen">
+                            <source type="image/webp" srcset="img/char.webp">
+                            <img loading="lazy" src="img/char.png" alt="">
+                        </picture>
+                    </div>
+
+
+
                     <div class="collage__loon"></div>
                     <BaseCollageInfo class="eagle" title="Орлан-белохвост" :color="'#71464E'"
                         :text="'Размах его крыльев достигает 2,4&nbsp;м. Птица нередко питается падалью и&nbsp;считается природным санитаром'" />
@@ -491,7 +595,12 @@
                         Обнаружен новый вид жука-долгоносика
                     </div>
                     <div class="division__new-ward-descr">
-                        В&nbsp;ходе Большой Научной экспедиции в&nbsp;Норильском дивизионе учёные открыли новый вид жука-долгоносика. Имя для него выбирали голосованием среди жителей Норильска и&nbsp;работников &laquo;Норникеля&raquo;. Победил вариант &laquo;Путоранчик&raquo;. Жука назвали в&nbsp;честь одного из&nbsp;удивительнейших мест Росси, объекта всемирного наследия ЮНЕСКО, территории реликтовых животных и&nbsp;растений, место с&nbsp;тысячью озёр, водопадами и&nbsp;величественными каньонами&nbsp;&mdash; плато Путорана.
+                        В&nbsp;ходе Большой Научной экспедиции в&nbsp;Норильском дивизионе учёные открыли новый вид
+                        жука-долгоносика. Имя для него выбирали голосованием среди жителей Норильска и&nbsp;работников
+                        &laquo;Норникеля&raquo;. Победил вариант &laquo;Путоранчик&raquo;. Жука назвали в&nbsp;честь
+                        одного из&nbsp;удивительнейших мест Росси, объекта всемирного наследия ЮНЕСКО, территории
+                        реликтовых животных и&nbsp;растений, место с&nbsp;тысячью озёр, водопадами
+                        и&nbsp;величественными каньонами&nbsp;&mdash; плато Путорана.
                     </div>
                     <picture class="division__new-ward-img">
                         <source type="image/webp" srcset="img/bug.webp">
@@ -755,6 +864,20 @@ export default {
     },
     data() {
         return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+            isLoadingThree: false,
+            isLoadingFour: false,
+            isLoadingFive: false,
+            isLoadingSix: false,
+            isLoadingSeven: false,
+            isLoadingEight: false,
+            isLoadingNine: false,
+            isLoadingTen: false,
+            isLoadingEleven: false,
+            isLoadingTwelve: false,
+            isLoadingThirteen: false,
+            isLoadingLast: false,
             map1: 1,
             map2: 2,
             idMap: 1,
@@ -794,10 +917,52 @@ export default {
     mounted() {
         this.$nextTick(function () {
             this.scrollAnimation()
-            this.parallax()
+            // this.parallax()
         })
     },
     methods: {
+        videoLoadedOne() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
+        videoLoadedThree() {
+            this.isLoadingThree = true;
+        },
+        videoLoadedFour() {
+            this.isLoadingFour = true;
+        },
+        videoLoadedFive() {
+            this.isLoadingFive = true;
+        },
+        videoLoadedSix() {
+            this.isLoadingSix = true;
+        },
+        videoLoadedSeven() {
+            this.isLoadingSeven = true;
+        },
+        videoLoadedEight() {
+            this.isLoadingEight = true;
+        },
+        videoLoadedNine() {
+            this.isLoadingNine = true;
+        },
+        videoLoadedTen() {
+            this.isLoadingTen = true;
+        },
+        videoLoadedEleven() {
+            this.isLoadingEleven = true;
+        },
+        videoLoadedTwelve() {
+            this.isLoadingTwelve = true;
+        },
+        videoLoadedThirteen() {
+            this.isLoadingThirteen = true;
+        },
+        videoLoadedLast() {
+            this.isLoadingLast = true;
+        },
         onResize() {
             this.isMobile = (window.innerWidth <= 768);
         },
@@ -893,57 +1058,57 @@ export default {
                 },
             });
         },
-        parallax() {
-            if (window.innerWidth > 768) {
-                gsap.fromTo(".collage__eagle", { y: 105 }, {
-                    y: -20,
-                    scrollTrigger: {
-                        trigger: ".collage",
-                        start: 'top 100%',
-                        end: '13%',
-                        // markers: true,
-                        scrub: true
-                    },
+        // parallax() {
+        //     if (window.innerWidth > 768) {
+        //         gsap.fromTo(".collage__eagle", { y: 105 }, {
+        //             y: -20,
+        //             scrollTrigger: {
+        //                 trigger: ".collage",
+        //                 start: 'top 100%',
+        //                 end: '13%',
+        //                 // markers: true,
+        //                 scrub: true
+        //             },
 
-                });
+        //         });
 
-                gsap.fromTo(".collage__merlin", { y: 55 }, {
-                    y: -15,
-                    scrollTrigger: {
-                        trigger: ".collage",
-                        start: '25% 100%',
-                        end: '33%',
-                        // markers: true,
-                        scrub: true
-                    },
+        //         gsap.fromTo(".collage__merlin", { y: 55 }, {
+        //             y: -15,
+        //             scrollTrigger: {
+        //                 trigger: ".collage",
+        //                 start: '25% 100%',
+        //                 end: '33%',
+        //                 // markers: true,
+        //                 scrub: true
+        //             },
 
-                });
+        //         });
 
-                gsap.fromTo(".collage__loach", { y: 50 }, {
-                    y: -0,
-                    scrollTrigger: {
-                        trigger: ".collage",
-                        start: '90% 100%',
-                        end: 'bottom',
-                        // markers: true,
-                        scrub: true
-                    },
+        //         gsap.fromTo(".collage__loach", { y: 50 }, {
+        //             y: -0,
+        //             scrollTrigger: {
+        //                 trigger: ".collage",
+        //                 start: '90% 100%',
+        //                 end: 'bottom',
+        //                 // markers: true,
+        //                 scrub: true
+        //             },
 
-                });
+        //         });
 
-                gsap.fromTo(".collage__loon", { y: 35 }, {
-                    y: -10,
-                    scrollTrigger: {
-                        trigger: ".collage",
-                        start: '80% 100%',
-                        end: '100%',
-                        // markers: true,
-                        scrub: true
-                    },
+        //         gsap.fromTo(".collage__loon", { y: 35 }, {
+        //             y: -10,
+        //             scrollTrigger: {
+        //                 trigger: ".collage",
+        //                 start: '80% 100%',
+        //                 end: '100%',
+        //                 // markers: true,
+        //                 scrub: true
+        //             },
 
-                });
-            }
-        }
+        //         });
+        //     }
+        // }
     }
 }
 </script>
@@ -1639,18 +1804,22 @@ export default {
             }
         }
 
+        video {
+            position: absolute;
+            width: 100%;
+        }
+
         &__eagle {
             position: absolute;
             top: 0rem;
             left: 8rem;
             width: 52.2223rem;
-            height: 47.5rem;
-            background-image: url(../../public/img/collage-eagle.png);
-            background-repeat: no-repeat;
-            background-size: contain;
 
-            @supports (background-image: url(../../public/img/collage-eagle.webp)) {
-                background-image: url(../../public/img/collage-eagle.webp);
+            video {
+                width: 129%;
+                top: 1rem;
+                left: -8rem;
+                transform: rotate(12deg);
             }
 
             @media (max-width: 768px) {
@@ -1663,13 +1832,11 @@ export default {
             top: 87.7rem;
             left: 12.3rem;
             width: 38rem;
-            height: 27rem;
-            background-image: url(../../public/img/merlin.png);
-            background-repeat: no-repeat;
-            background-size: contain;
 
-            @supports (background-image: url(../../public/img/merlin.webp)) {
-                background-image: url(../../public/img/merlin.webp);
+            video {
+                width: 280%;
+                left: -31rem;
+                top: -46rem;
             }
 
             @media (max-width: 768px) {
@@ -1677,19 +1844,148 @@ export default {
             }
         }
 
-        &__loach {
+        &__sapsan {
             position: absolute;
-            top: 316rem;
-            left: 6.3rem;
-            width: 29.167rem;
-            height: 11.528rem;
-            background-image: url(../../public/img/collage-loach.png);
-            background-repeat: no-repeat;
-            background-size: contain;
+            top: 53.5rem;
+            left: 25.3rem;
+            width: 27rem;
 
-            @supports (background-image: url(../../public/img/collage-loach.webp)) {
-                background-image: url(../../public/img/collage-loach.webp);
+            video {
+                width: 200%;
+                left: -9rem;
+                top: -4rem;
+                transform: rotate(-35deg);
             }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__char {
+            position: absolute;
+            top: 310rem;
+            left: 3.3rem;
+            width: 34rem;
+            transform: rotate(-10deg);
+
+            video {
+                width: 113%;
+                left: -2rem;
+                top: 1rem;
+                transform: rotate(11deg);
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__warbler {
+            position: absolute;
+            top: 71rem;
+            left: 54.3rem;
+            width: 20rem;
+            transform: rotate(-10deg);
+
+            video {
+                width: 113%;
+                left: -2rem;
+                top: 1rem;
+                transform: rotate(11deg);
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__warbler-2 {
+            position: absolute;
+            top: 46.5rem;
+            left: 65rem;
+            width: 17rem;
+            transform: rotate(-15deg);
+
+            video {
+                width: 113%;
+                left: -2rem;
+                top: 1rem;
+                transform: rotate(11deg);
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__lentils {
+            position: absolute;
+            top: 44.3rem;
+            left: -2.2rem;
+            width: 23rem;
+            transform: scaleX(-1);
+
+            video {}
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__oatmeal {
+            position: absolute;
+            top: 103.5rem;
+            left: 46.5rem;
+            width: 23rem;
+
+            video {}
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__shrew {
+            position: absolute;
+            top: 180rem;
+            left: 13rem;
+            width: 24rem;
+            transform: scaleX(-1);
+
+            video {}
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__deep {
+            position: absolute;
+            top: 127rem;
+            left: 12rem;
+            width: 75rem;
+
+            video {
+                transform: scaleX(-1);
+                width: 131%;
+                left: -19rem;
+                top: -15rem;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__white-partridge {
+            position: absolute;
+            top: 161.5rem;
+            left: -3rem;
+            width: 27rem;
+            transform: scaleX(-1);
+
+            video {}
 
             @media (max-width: 768px) {
                 display: none;
@@ -2505,7 +2801,7 @@ export default {
             position: absolute;
             display: block;
             width: 22.375rem;
-            height: auto;    
+            height: auto;
             top: 4.5rem;
             left: -5rem;
             z-index: 1;
