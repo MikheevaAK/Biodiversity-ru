@@ -407,11 +407,13 @@
 
                     <div class="collage__sapsan">
                         <video @loadeddata="videoLoadedThree" autoplay loop muted playsinline preload="none">
-                            <source src="video/sapsan.mov" type="video/mp4">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/vrryrs1jjqj68hsho0xop/sapsan.mov?rlkey=4kdmze87pgabpy44pjygwiybn&st=tnan3j0l&dl=0"
+                                type="video/mp4">
                             <source src="video/sapsan.webm" type="video/webm">
                         </video>
 
-                        <picture v-if="isLoadingThree">
+                        <picture v-if="!isLoadingThree">
                             <source type="image/webp" srcset="img/sapsan.webp">
                             <img loading="lazy" src="img/sapsan.png" alt="">
                         </picture>
@@ -473,8 +475,22 @@
                         </video>
                     </div>
 
+                    <div class="collage__bug">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/bug.mov" type="video/mp4">
+                            <source src="video/bug.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__plover">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/plover.mov" type="video/mp4">
+                            <source src="video/plover.webm" type="video/webm">
+                        </video>
+                    </div>
+
                     <div class="collage__char">
-                        <video @loadeddata="videoLoadedThirteen" autoplay loop muted playsinline preload="none">
+                        <video @loadeddata="videoLoadedThirteen" autoplay loop muted playsinline>
                             <source src="video/char.mov" type="video/mp4">
                             <source src="video/char.webm" type="video/webm">
                         </video>
@@ -485,9 +501,109 @@
                         </picture>
                     </div>
 
+                    <div class="collage__fish">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/collage-fish.mov" type="video/mp4">
+                            <source src="video/collage-fish.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__wolverine">
+                        <video @loadeddata="videoLoadedNine" autoplay loop muted playsinline>
+                            <source src="video/wolverine.mov" type="video/mp4">
+                            <source src="video/wolverine.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!videoLoadedNine">
+                            <source type="image/webp" srcset="img/wolverine.webp">
+                            <img loading="lazy" src="img/wolverine.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__vole">
+                        <video autoplay loop muted playsinline>
+                            <source src="video/vole.mov" type="video/mp4">
+                            <source src="video/vole.webm" type="video/webm">
+                        </video>
+                    </div>
+
+                    <div class="collage__goose">
+                        <video @loadeddata="videoLoadedEight" autoplay loop muted playsinline>
+                            <source src="video/goose.mov" type="video/mp4">
+                            <source src="video/goose.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!videoLoadedEight">
+                            <source type="image/webp" srcset="img/goose.webp">
+                            <img loading="lazy" src="img/goose.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor.webp">
+                            <img loading="lazy" src="img/watercolor.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-2">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor.webp">
+                            <img loading="lazy" src="img/watercolor.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-3">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor-4.webp">
+                            <img loading="lazy" src="img/watercolor-4.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__watercolor-4">
+                        <picture>
+                            <source type="image/webp" srcset="img/watercolor-5.webp">
+                            <img loading="lazy" src="img/watercolor-5.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__swan">
+                        <video @loadeddata="videoLoadedTen" autoplay loop muted playsinline>
+                            <source src="video/swan.mov" type="video/mp4">
+                            <source src="video/swan.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTen">
+                            <source type="image/webp" srcset="img/collage-kola-swan.webp">
+                            <img loading="lazy" src="img/collage-kola-swan.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__loon">
+                        <video @loadeddata="videoLoadedEleven" autoplay loop muted playsinline preload="none">
+                            <source src="video/loon.mov" type="video/mp4">
+                            <source src="video/loon.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingEleven">
+                            <source type="image/webp" srcset="img/loon.webp">
+                            <img loading="lazy" src="img/loon.png" alt="">
+                        </picture>
+                    </div>
+
+                    <div class="collage__hare">
+                        <video @loadeddata="videoLoadedTwelve" autoplay loop muted playsinline>
+                            <source src="video/hare.mov" type="video/mp4">
+                            <source src="video/hare.webm" type="video/webm">
+                        </video>
+
+                        <picture v-if="!isLoadingTwelve">
+                            <source type="image/webp" srcset="img/hare.webp">
+                            <img loading="lazy" src="img/hare.png" alt="">
+                        </picture>
+                    </div>
 
 
-                    <div class="collage__loon"></div>
                     <BaseCollageInfo class="eagle" title="Орлан-белохвост" :color="'#71464E'"
                         :text="'Размах его крыльев достигает 2,4&nbsp;м. Птица нередко питается падалью и&nbsp;считается природным санитаром'" />
 
@@ -1823,7 +1939,9 @@ export default {
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 22rem;
+                left: 4rem;
+                width: 65.2223rem;
             }
         }
 
@@ -1837,10 +1955,18 @@ export default {
                 width: 280%;
                 left: -31rem;
                 top: -46rem;
+
+                @media (max-width: 768px) {
+                    width: 270%;
+                    left: -45rem;
+                    top: -67rem;
+                }
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 143rem;
+                left: 0rem;
+                width: 58rem;
             }
         }
 
@@ -1858,13 +1984,15 @@ export default {
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 92.5rem;
+                left: 46.3rem;
+                width: 37rem;
             }
         }
 
         &__char {
             position: absolute;
-            top: 310rem;
+            top: 311rem;
             left: 3.3rem;
             width: 34rem;
             transform: rotate(-10deg);
@@ -1874,10 +2002,17 @@ export default {
                 left: -2rem;
                 top: 1rem;
                 transform: rotate(11deg);
+
+                @media (max-width: 768px) {
+                    left: -6rem;
+                }
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 772rem;
+                left: 53.3rem;
+                width: 44rem;
+                transform: scaleX(-1) rotate(-17deg);
             }
         }
 
@@ -1896,7 +2031,9 @@ export default {
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 206rem;
+                left: 2rem;
+                width: 30rem;
             }
         }
 
@@ -1915,7 +2052,10 @@ export default {
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 185.5rem;
+                left: 59rem;
+                width: 29rem;
+                transform: rotate(-23deg);
             }
         }
 
@@ -1926,10 +2066,10 @@ export default {
             width: 23rem;
             transform: scaleX(-1);
 
-            video {}
-
             @media (max-width: 768px) {
-                display: none;
+                top: 242.3rem;
+                left: 1.8rem;
+                width: 33rem;
             }
         }
 
@@ -1939,10 +2079,11 @@ export default {
             left: 46.5rem;
             width: 23rem;
 
-            video {}
-
             @media (max-width: 768px) {
-                display: none;
+                top: 219.5rem;
+                left: 63.5rem;
+                width: 37rem;
+                transform: scaleX(-1);
             }
         }
 
@@ -1953,10 +2094,25 @@ export default {
             width: 24rem;
             transform: scaleX(-1);
 
-            video {}
+            @media (max-width: 768px) {
+                top: 582rem;
+                left: 39rem;
+                width: 37rem;
+                transform: rotate(20deg);
+            }
+        }
+
+        &__fish {
+            position: absolute;
+            top: 321.2rem;
+            left: 36.6rem;
+            width: 30rem;
 
             @media (max-width: 768px) {
-                display: none;
+                top: 760.2rem;
+                width: 50rem;
+                transform: scaleX(-1);
+                left: 2rem;
             }
         }
 
@@ -1971,10 +2127,17 @@ export default {
                 width: 131%;
                 left: -19rem;
                 top: -15rem;
+
+                @media (max-width: 768px) {
+                    left: -22rem;
+                }
             }
 
             @media (max-width: 768px) {
-                display: none;
+                top: 286rem;
+                left: 0rem;
+                width: 93rem;
+                transform: scalex(-1);
             }
         }
 
@@ -1985,29 +2148,204 @@ export default {
             width: 27rem;
             transform: scaleX(-1);
 
-            video {}
+            @media (max-width: 768px) {
+                top: 358.5rem;
+                width: 36rem;
+            }
+        }
+
+        &__swan {
+            position: absolute;
+            width: 46.3rem;
+            top: 261.5rem;
+            left: -2.4rem;
+
+            @media (max-width: 768px) {
+                width: 64.3rem;
+                top: 635.5rem;
+                left: -17.4rem;
+            }
+        }
+
+        &__loon {
+            position: absolute;
+            top: 281.1rem;
+            left: 46.3rem;
+            width: 31.903rem;
+
+            video {
+                width: 118%;
+                top: -4.8rem;
+                left: -2rem;
+
+                @media (max-width: 768px) {
+                    top: -7.8rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                top: 692.1rem;
+                left: 46.3rem;
+                width: 47rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__hare {
+            position: absolute;
+            top: 214.5rem;
+            left: 5.5rem;
+            width: 21rem;
+
+            video {
+                width: 175%;
+                top: -6rem;
+                left: -8rem;
+            }
+
+            @media (max-width: 768px) {
+                top: 550.5rem;
+                left: 2.5rem;
+                width: 27rem;
+            }
+        }
+
+        &__wolverine {
+            position: absolute;
+            top: 184rem;
+            left: 54.5rem;
+            width: 44rem;
+
+            video {
+                width: 134%;
+                top: -6rem;
+                left: -7rem;
+            }
+
+            @media (max-width: 768px) {
+                top: 398rem;
+                left: 46.5rem;
+                width: 58rem;
+            }
+        }
+
+        &__vole {
+            position: absolute;
+            top: 234.5rem;
+            left: 76.2rem;
+            width: 27rem;
+
+            @media (max-width: 768px) {
+                top: 344.5rem;
+                left: 67.2rem;
+                width: 38rem;
+            }
+        }
+
+        &__goose {
+            position: absolute;
+            top: 247.5rem;
+            left: 38rem;
+            width: 26rem;
+
+            video {
+                width: 135%;
+                top: -3rem;
+                left: -4rem;
+            }
+
+            @media (max-width: 768px) {
+                top: 622.5rem;
+                left: 67rem;
+                width: 31rem;
+                transform: scaleX(-1);
+            }
+        }
+
+        &__watercolor {
+            position: absolute;
+            top: 20rem;
+            left: 5rem;
+            width: 35rem;
+            mix-blend-mode: multiply;
+            transform: rotate(167deg);
+            z-index: -1;
+
+            @media (max-width: 768px) {
+                top: 26rem;
+                left: -14rem;
+                width: 67rem;
+            }
+        }
+
+        &__watercolor-2 {
+            position: absolute;
+            top: 83rem;
+            left: 62rem;
+            width: 34rem;
+            mix-blend-mode: multiply;
+            transform: rotate(167deg);
 
             @media (max-width: 768px) {
                 display: none;
             }
         }
 
-        &__loon {
+        &__watercolor-3 {
             position: absolute;
-            top: 281rem;
-            left: 47.3rem;
-            width: 30.903rem;
-            height: 23.75rem;
-            background-image: url(../../public/img/collage-loon.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-
-            @supports (background-image: url(../../public/img/collage-loon.webp)) {
-                background-image: url(../../public/img/collage-loon.webp);
-            }
+            top: 246rem;
+            left: 32rem;
+            width: 36rem;
+            mix-blend-mode: multiply;
 
             @media (max-width: 768px) {
-                display: none;
+                top: 623rem;
+                left: 65rem;
+                width: 36rem;
+                transform: rotate(6deg);
+            }
+        }
+
+        &__watercolor-4 {
+            position: absolute;
+            top: 144rem;
+            left: 29rem;
+            width: 70rem;
+            mix-blend-mode: multiply;
+
+            @media (max-width: 768px) {
+                top: 306rem;
+                left: 15rem;
+                width: 86rem;
+            }
+        }
+
+        &__bug {
+            position: absolute;
+            top: 262.5rem;
+            left: 85.2rem;
+            width: 13rem;
+            transform: rotate(45deg);
+
+            @media (max-width: 768px) {
+                top: 485rem;
+                left: 51rem;
+                width: 26rem;
+                transform: rotate(-48deg);
+            }
+        }
+
+        &__plover {
+            position: absolute;
+            top: 228rem;
+            left: 28rem;
+            width: 30rem;
+
+            @media (max-width: 768px) {
+                top: 495rem;
+                left: 46rem;
+                width: 50rem;
+                transform: scaleX(-1);
             }
         }
 
