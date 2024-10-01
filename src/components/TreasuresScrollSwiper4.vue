@@ -108,7 +108,7 @@ export default {
         display: flex;
         width: 188rem;
         height: 38.12rem;
-        background-image: url(../../public/img/treasures-scroll-4.png);
+        background-image: url(../../public/img/treasures-scroll-4.jpg);
         background-repeat: no-repeat;
         background-size: 100%;
 

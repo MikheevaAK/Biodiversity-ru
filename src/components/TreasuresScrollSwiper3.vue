@@ -6,50 +6,92 @@
                 <div class="treasures-3-item__title">Овцебык</div>
                 <div class="treasures-3-item__descr">
                     <p>
-                        Когда‑то эти животные паслись по&nbsp;соседству с&nbsp;мамонтами. Пару тысяч лет назад изменение климата и&nbsp;охота привели к&nbsp;тому, что овцебыки исчезли с&nbsp;сибирских просторов. Вновь они появились здесь только в&nbsp;1970-х годах&nbsp;&mdash; несколько десятков животных завезли из&nbsp;Канады. Сейчас на&nbsp;Таймыре обитает около 14&nbsp;тыс. овцебыков, и&nbsp;на&nbsp;окраинах плато Путорана можно встретить их&nbsp;стада.
+                        Когда‑то эти животные паслись по&nbsp;соседству с&nbsp;мамонтами. Пару тысяч лет назад изменение
+                        климата и&nbsp;охота привели к&nbsp;тому, что овцебыки исчезли с&nbsp;сибирских просторов. Вновь
+                        они появились здесь только в&nbsp;1970-х годах&nbsp;&mdash; несколько десятков животных завезли
+                        из&nbsp;Канады. Сейчас на&nbsp;Таймыре обитает около 14&nbsp;тыс. овцебыков,
+                        и&nbsp;на&nbsp;окраинах плато Путорана можно встретить их&nbsp;стада.
                     </p>
                 </div>
+            </div>
+
+            <div class="musk-ox">
+                <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
+                    <source
+                        src="https://www.dropbox.com/scl/fi/khxy5445on7e08lt6ac0e/musk-ox.mov?rlkey=g7qjg9mhkjk39sfnjkdw4lmci&st=rcs7zyxu&dl=0"
+                        type="video/mp4">
+                    <source src="video/musk-ox.webm" type="video/webm">
+                </video>
+                <picture v-if="!isLoadingOne">
+                    <source type="image/webp" srcset="img/musk-ox.webp">
+                    <img loading="lazy" src="img/musk-ox.png" alt="">
+                </picture>
+            </div>
+
+            <div class="merlin">
+                <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline preload="none">
+                    <source src="video/merlin.mov" type="video/mp4">
+                    <source src="video/merlin.webm" type="video/webm">
+                </video>
+
+                <picture v-if="!isLoadingTwo">
+                    <source type="image/webp" srcset="img/merlin.webp">
+                    <img loading="lazy" src="img/merlin.png" alt="">
+                </picture>
             </div>
 
             <div class="treasures-3-item treasures-3-item_2">
                 <div class="treasures-3-item__title">Путоранский снежный баран</div>
                 <div class="treasures-3-item__descr">
-                    Уникальный эндемичный подвид снежного барана. Ареал его расположен на&nbsp;плато Путорана и&nbsp;более чем на&nbsp;тысячу километров удалён от&nbsp;районов распространения других подвидов снежного барана. Учёные не&nbsp;исключают, что путоранский подвид может быть реликтовым. Занесён в&nbsp;Красную книгу.
+                    Уникальный эндемичный подвид снежного барана. Ареал его расположен на&nbsp;плато Путорана
+                    и&nbsp;более чем на&nbsp;тысячу километров удалён от&nbsp;районов распространения других подвидов
+                    снежного барана. Учёные не&nbsp;исключают, что путоранский подвид может быть реликтовым. Занесён
+                    в&nbsp;Красную книгу.
                 </div>
             </div>
 
             <div class="treasures-3-item treasures-3-item_3">
                 <div class="treasures-3-item__title">Ястребинкa путоранская</div>
                 <div class="treasures-3-item__descr">
-                    Это растение с&nbsp;небольшими ярко-жёлтыми цветками встречается только на&nbsp;западе плато Путорана, в&nbsp;других местах пока не&nbsp;обнаружено. Занесена в&nbsp;Красную книгу Красноярского края.
+                    Это растение с&nbsp;небольшими ярко-жёлтыми цветками встречается только на&nbsp;западе плато
+                    Путорана, в&nbsp;других местах пока не&nbsp;обнаружено. Занесена в&nbsp;Красную книгу Красноярского
+                    края.
                 </div>
             </div>
 
             <div class="treasures-3-item treasures-3-item_4">
                 <div class="treasures-3-item__title">Сибирский углозуб</div>
                 <div class="treasures-3-item__descr">
-                    Единственный вид земноводных, способный обитать в&nbsp;зоне многолетней мерзлоты. Выживать во&nbsp;время холодов и&nbsp;долгих зим животному помогает значительное количество глицерина, вырабатываемого печенью.
+                    Единственный вид земноводных, способный обитать в&nbsp;зоне многолетней мерзлоты. Выживать
+                    во&nbsp;время холодов и&nbsp;долгих зим животному помогает значительное количество глицерина,
+                    вырабатываемого печенью.
                 </div>
             </div>
 
             <div class="treasures-3-item treasures-3-item_5">
                 <div class="treasures-3-item__title">Сапсан</div>
                 <div class="treasures-3-item__descr">
-                    Этот сокол считается самой быстрой птицей на&nbsp;планете: во&nbsp;время пикирования он&nbsp;развивает скорость до&nbsp;322&nbsp;км/ч. Сапсан распространён практически на&nbsp;всех континентах (за&nbsp;исключением Антарктиды), однако численность его невысока&nbsp;&mdash; в&nbsp;России этот сокол внесён в&nbsp;Красную книгу.
+                    Этот сокол считается самой быстрой птицей на&nbsp;планете: во&nbsp;время пикирования
+                    он&nbsp;развивает скорость до&nbsp;322&nbsp;км/ч. Сапсан распространён практически на&nbsp;всех
+                    континентах (за&nbsp;исключением Антарктиды), однако численность его невысока&nbsp;&mdash;
+                    в&nbsp;России этот сокол внесён в&nbsp;Красную книгу.
                 </div>
             </div>
 
             <div class="treasures-3-item treasures-3-item_6">
                 <div class="treasures-3-item__title">Пискулька</div>
                 <div class="treasures-3-item__descr">
-                    Своё название эта птица получила за&nbsp;характерный звук, издаваемый во&nbsp;время полёта. Занесена в&nbsp;Красную книгу России, всякая охота на&nbsp;неё запрещена.
+                    Своё название эта птица получила за&nbsp;характерный звук, издаваемый во&nbsp;время полёта. Занесена
+                    в&nbsp;Красную книгу России, всякая охота на&nbsp;неё запрещена.
                 </div>
             </div>
 
             <div class="treasures-3-item treasures-3-item_7">
                 <div class="treasures-3-item__title">Муксун</div>
                 <div class="treasures-3-item__descr">
-                    В&nbsp;недавнем прошлом являлся одним из&nbsp;основных промысловых видов в&nbsp;бассейнах Енисея, Пясины, Таймыры и&nbsp;Хатанги. Однако в&nbsp;последние годы его численность стремительно сокращается.
+                    В&nbsp;недавнем прошлом являлся одним из&nbsp;основных промысловых видов в&nbsp;бассейнах Енисея,
+                    Пясины, Таймыры и&nbsp;Хатанги. Однако в&nbsp;последние годы его численность стремительно
+                    сокращается.
                 </div>
             </div>
         </div>
@@ -64,12 +106,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default {
+    data() {
+        return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+        }
+    },
     mounted() {
         this.$nextTick(function () {
             this.scrollAnimation();
         })
     },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
         scrollAnimation() {
             if (window.innerWidth > 768) {
                 const panels = gsap.utils.toArray(".treasures-3-container .treasures-3-item");
@@ -101,13 +155,14 @@ export default {
         display: flex;
         width: 243rem;
         height: 38.12rem;
-        background-image: url(../../public/img/treasures-scroll-3.png);
+        background-image: url(../../public/img/treasures-scroll-3.jpg);
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 105%;
 
         @media (max-width: 768px) {
             width: 933rem;
             height: 100%;
+            background-size: 100%;
             background-image: url(../../public/img/treasures-scroll-3-mobile.png);
 
             &__wrap {
@@ -121,6 +176,46 @@ export default {
                     width: 0;
                 }
             }
+        }
+    }
+
+    video {
+        position: absolute;
+        width: 100%;
+    }
+
+    .musk-ox {
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+        width: 53rem;
+
+        video {
+            transform: scaleX(-1);
+            width: 124%;
+            top: -9rem;
+            left: -13rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .merlin {
+        position: absolute;
+        top: 0rem;
+        left: 51rem;
+        width: 17rem;
+
+        video {
+            width: 275%;
+            top: -20rem;
+            left: -13rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
         }
     }
 
