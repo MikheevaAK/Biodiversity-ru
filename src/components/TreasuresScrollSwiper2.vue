@@ -6,18 +6,59 @@
                 <div class="treasures-2-item__title">Росянка</div>
                 <div class="treasures-2-item__descr">
                     <p>
-                        Листья этого растения покрыты капельками клейкого сока. Садящиеся на&nbsp;них насекомые оказываются
+                        Листья этого растения покрыты капельками клейкого сока. Садящиеся на&nbsp;них насекомые
+                        оказываются
                         в&nbsp;ловушке: они прилипают и&nbsp;уже не&nbsp;могут улететь. После этого росянка закручивает
-                        лист, полностью обволакивая свою жертву, и&nbsp;в&nbsp;течение нескольких дней переваривает добычу.
+                        лист, полностью обволакивая свою жертву, и&nbsp;в&nbsp;течение нескольких дней переваривает
+                        добычу.
                     </p>
                 </div>
+            </div>
+
+            <div class="lizard">
+                <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
+                    <source src="video/lizard.mov" type="video/mp4">
+                    <source src="video/lizard.webm" type="video/webm">
+                </video>
+                <picture v-if="!isLoadingOne">
+                    <source type="image/webp" srcset="img/lizard.webp">
+                    <img loading="lazy" src="img/lizard.png" alt="">
+                </picture>
+            </div>
+
+            <div class="swan">
+                <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline>
+                    <source src="video/swan.mov" type="video/mp4">
+                    <source src="video/swan.webm" type="video/webm">
+                </video>
+                <picture v-if="!isLoadingTwo">
+                    <source type="image/webp" srcset="img/collage-kola-swan.webp">
+                    <img loading="lazy" src="img/collage-kola-swan.png" alt="">
+                </picture>
+            </div>
+
+            <div class="shrike">
+                <video autoplay loop muted playsinline>
+                    <source src="video/shrike.mov" type="video/mp4">
+                    <source src="video/shrike.webm" type="video/webm">
+                </video>
+            </div>
+
+            <div class="deep">
+                <video autoplay loop muted playsinline>
+                    <source
+                        src="https://www.dropbox.com/scl/fi/06c8xlgu43sqhvnqpw8uk/deep-big.mov?rlkey=3q9y6yv0o6xx69y8nmqkrisy2&st=kdczywm0&dl=0"
+                        type="video/mp4">
+                    <source src="video/deep-big.webm" type="video/webm">
+                </video>
             </div>
 
             <div class="treasures-2-item treasures-2-item_2">
                 <div class="treasures-2-item__title">Живородящая ящерица</div>
                 <div class="treasures-2-item__descr">
                     Благодаря своей устойчивости к&nbsp;низким температурам этот вид ящерицы может обитать даже
-                    в&nbsp;районе Полярного круга. Зимуют эти рептилии под землёй, забираясь в&nbsp;укрытия на&nbsp;глубину
+                    в&nbsp;районе Полярного круга. Зимуют эти рептилии под землёй, забираясь в&nbsp;укрытия
+                    на&nbsp;глубину
                     до&nbsp;40&nbsp;см.
                 </div>
             </div>
@@ -33,8 +74,10 @@
             <div class="treasures-2-item treasures-2-item_4">
                 <div class="treasures-2-item__title">Лебедь-кликун</div>
                 <div class="treasures-2-item__descr">
-                    В&nbsp;Лапландский заповедник эти птицы прилетают с&nbsp;мест зимовки в&nbsp;марте&nbsp;&mdash; начале
-                    апреля. Холода им&nbsp;не&nbsp;страшны&nbsp;&mdash; главное, чтобы была открытая вода, где лебеди могут
+                    В&nbsp;Лапландский заповедник эти птицы прилетают с&nbsp;мест зимовки в&nbsp;марте&nbsp;&mdash;
+                    начале
+                    апреля. Холода им&nbsp;не&nbsp;страшны&nbsp;&mdash; главное, чтобы была открытая вода, где лебеди
+                    могут
                     кормиться. Эти птицы моногамны и&nbsp;образуют пару на&nbsp;всю жизнь.
                 </div>
             </div>
@@ -42,8 +85,10 @@
             <div class="treasures-2-item treasures-2-item_5">
                 <div class="treasures-2-item__title">Обыкновенный серый сорокопут</div>
                 <div class="treasures-2-item__descr">
-                    Эта крупная певчая птица&nbsp;&mdash; безжалостный охотник. Основу её&nbsp;рациона составляют мышевидные
-                    грызуны, ящерицы и&nbsp;крупные насекомые. Пойманную добычу сорокопут может запасать впрок, нанизывая
+                    Эта крупная певчая птица&nbsp;&mdash; безжалостный охотник. Основу её&nbsp;рациона составляют
+                    мышевидные
+                    грызуны, ящерицы и&nbsp;крупные насекомые. Пойманную добычу сорокопут может запасать впрок,
+                    нанизывая
                     жертв на&nbsp;острые сучки и&nbsp;шипы.
                 </div>
             </div>
@@ -68,12 +113,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default {
+    data() {
+        return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+        }
+    },
     mounted() {
         this.$nextTick(function () {
             this.scrollAnimation();
         })
     },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
         scrollAnimation() {
             if (window.innerWidth > 768) {
                 const panels = gsap.utils.toArray(".treasures-2-container .treasures-2-item");
@@ -105,13 +162,14 @@ export default {
         display: flex;
         width: 184rem;
         height: 38.12rem;
-        background-image: url(../../public/img/treasures-scroll-2.png);
+        background-image: url(../../public/img/treasures-scroll-2.jpg);
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 100% 100%;
 
         @media (max-width: 768px) {
             width: 652rem;
             height: 100%;
+            background-size: 100%;
             background-image: url(../../public/img/treasures-scroll-2-mobile.png);
 
             &__wrap {
@@ -125,6 +183,70 @@ export default {
                     width: 0;
                 }
             }
+        }
+    }
+
+    video {
+        position: absolute;
+        width: 100%;
+    }
+
+    .lizard {
+        position: absolute;
+        top: 25rem;
+        left: 20rem;
+        width: 17rem;
+
+        video {
+            transform: scaleX(-1);
+            width: 145%;
+            top: -1rem;
+            left: -4rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .swan {
+        position: absolute;
+        top: 12rem;
+        left: 64rem;
+        width: 34rem;
+
+        video {
+            width: 109%;
+            top: -2rem;
+            left: -2rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .deep {
+        position: absolute;
+        top: 0rem;
+        left: 132rem;
+        width: 50rem;
+        transform: scaleX(-1);
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .shrike {
+        position: absolute;
+        top: 3rem;
+        left: 100rem;
+        width: 27rem;
+        transform: rotate(-14deg);
+
+        @media (max-width: 768px) {
+            display: none;
         }
     }
 

@@ -6,7 +6,8 @@
                 <div class="treasures-1-item__title">Луток</div>
                 <div class="treasures-1-item__descr">
                     <p class="mb-10">
-                        Эта утка&nbsp;&mdash; символ &laquo;Пасвика&raquo;. Её&nbsp;изображение с&nbsp;2021 года находится
+                        Эта утка&nbsp;&mdash; символ &laquo;Пасвика&raquo;. Её&nbsp;изображение с&nbsp;2021 года
+                        находится
                         на&nbsp;логотипе заповедника.
                     </p>
                     <p>
@@ -14,6 +15,38 @@
                         из&nbsp;самых массовых и&nbsp;типичных видов.
                     </p>
                 </div>
+            </div>
+
+            <div class="smew">
+                <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
+                    <source src="video/smew.mov" type="video/mp4">
+                    <source src="video/smew.webm" type="video/webm">
+                </video>
+                <picture v-if="!isLoadingOne">
+                    <source type="image/webp" srcset="img/smew.webp">
+                    <img loading="lazy" src="img/smew.png" alt="">
+                </picture>
+            </div>
+
+            <div class="spider">
+                <video autoplay loop muted playsinline>
+                    <source src="video/spider.mov" type="video/mp4">
+                    <source src="video/spider.webm" type="video/webm">
+                </video>
+            </div>
+
+            <div class="kutora">
+                <video autoplay loop muted playsinline>
+                    <source src="video/kutora.mov" type="video/mp4">
+                    <source src="video/kutora.webm" type="video/webm">
+                </video>
+            </div>
+
+            <div class="owl">
+                <video autoplay loop muted playsinline>
+                    <source src="video/owl.mov" type="video/mp4">
+                    <source src="video/owl.webm" type="video/webm">
+                </video>
             </div>
 
             <div class="treasures-1-item treasures-1-item_2">
@@ -27,7 +60,8 @@
             <div class="treasures-1-item treasures-1-item_3">
                 <div class="treasures-1-item__title">Гапломитриум Хукера</div>
                 <div class="treasures-1-item__descr">
-                    В&nbsp;Мурманской области известно всего 10&nbsp;местонахождений этого мха, причём каждое из&nbsp;них
+                    В&nbsp;Мурманской области известно всего 10&nbsp;местонахождений этого мха, причём каждое
+                    из&nbsp;них
                     крайне малочисленное&nbsp;&mdash; не&nbsp;более 30&nbsp;особей.
                 </div>
             </div>
@@ -43,8 +77,10 @@
             <div class="treasures-1-item treasures-1-item_5">
                 <div class="treasures-1-item__title">Обыкновенная кутора</div>
                 <div class="treasures-1-item__descr">
-                    Эта крупная землеройка&nbsp;&mdash; отличный пловец, поэтому охотится не&nbsp;только на&nbsp;насекомых,
-                    но&nbsp;также на&nbsp;рыб и&nbsp;птенцов водоплавающих птиц. В&nbsp;её&nbsp;слюне содержится&nbsp;яд,
+                    Эта крупная землеройка&nbsp;&mdash; отличный пловец, поэтому охотится не&nbsp;только
+                    на&nbsp;насекомых,
+                    но&nbsp;также на&nbsp;рыб и&nbsp;птенцов водоплавающих птиц. В&nbsp;её&nbsp;слюне
+                    содержится&nbsp;яд,
                     обладающий парализующим действием. Благодаря этому кутора может делать запасы из&nbsp;живых,
                     но&nbsp;обездвиженных животных.
                 </div>
@@ -69,12 +105,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default {
+    data() {
+        return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+        }
+    },
     mounted() {
         this.$nextTick(function () {
             this.scrollAnimation();
         })
     },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
         scrollAnimation() {
             if (window.innerWidth > 768) {
                 const panels = gsap.utils.toArray(".treasures-1-container .treasures-1-item");
@@ -105,14 +153,15 @@ export default {
         display: flex;
         width: 178rem;
         height: 38.12rem;
-        background-image: url(../../public/img/treasures-scroll-1.png);
+        background-image: url(../../public/img/treasures-scroll-1.jpg);
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 100% 100%;
 
         @media (max-width: 768px) {
             width: 554rem;
             height: 100%;
             background-position: bottom;
+            background-size: 100%;
             background-image: url(../../public/img/treasures-scroll-1-mobile.png);
 
             &__wrap {
@@ -126,6 +175,64 @@ export default {
                     width: 0;
                 }
             }
+        }
+    }
+
+    video {
+        position: absolute;
+        width: 100%;
+    }
+
+    .smew {
+        position: absolute;
+        top: 9rem;
+        left: 7rem;
+        width: 32rem;
+
+        video {
+            transform: scaleX(-1);
+            width: 145%;
+            top: -4.5rem;
+            left: -9rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .spider {
+        position: absolute;
+        top: 26rem;
+        left: 89rem;
+        width: 20rem;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .kutora {
+        position: absolute;
+        top: 18rem;
+        left: 110rem;
+        width: 28rem;
+        transform: scaleX(-1);
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .owl {
+        position: absolute;
+        top: 0rem;
+        left: 137rem;
+        width: 27rem;
+        transform: scaleX(-1);
+
+        @media (max-width: 768px) {
+            display: none;
         }
     }
 
