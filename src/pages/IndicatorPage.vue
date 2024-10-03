@@ -79,12 +79,16 @@
                         </video>
 
                         <video class="sapsan" autoplay loop muted playsinline>
-                            <source src="https://www.dropbox.com/scl/fi/vrryrs1jjqj68hsho0xop/sapsan.mov?rlkey=4kdmze87pgabpy44pjygwiybn&st=u28lqjyw&dl=0" type="video/mp4">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/vrryrs1jjqj68hsho0xop/sapsan.mov?rlkey=4kdmze87pgabpy44pjygwiybn&st=u28lqjyw&dl=0"
+                                type="video/mp4">
                             <source src="video/sapsan.webm" type="video/webm">
                         </video>
 
                         <video class="elk" autoplay loop muted playsinline>
-                            <source src="https://www.dropbox.com/scl/fi/flu9z4hgetu9gj8bmhnfa/elk.mov?rlkey=8opnrr2agml7bhz7sx5x47n1i&st=25zq6i62&dl=0" type="video/mp4">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/flu9z4hgetu9gj8bmhnfa/elk.mov?rlkey=8opnrr2agml7bhz7sx5x47n1i&st=25zq6i62&dl=0"
+                                type="video/mp4">
                             <source src="video/elk.webm" type="video/webm">
                         </video>
 
@@ -102,7 +106,7 @@
                         </video>
                     </div>
                 </div>
-        
+
                 <div class="scroll-wrap">
                     <div class="scroll-card card-1 text-block__descr">
                         <BaseTextBlock title="Сбор данных в зонах воздействия">
@@ -1528,9 +1532,9 @@ export default {
 
         video {
             position: absolute;
-            width: 28.9rem;
-            top: -0.7rem;
-            right: -3.47rem;
+            width: 28.92rem;
+            top: -0.715rem;
+            right: -3.4rem;
 
             @media (max-width: 768px) {
                 right: -13.4rem;
