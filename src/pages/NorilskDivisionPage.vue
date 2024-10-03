@@ -718,9 +718,18 @@
                         реликтовых животных и&nbsp;растений, место с&nbsp;тысячью озёр, водопадами
                         и&nbsp;величественными каньонами&nbsp;&mdash; плато Путорана.
                     </div>
-                    <picture class="division__new-ward-img">
+                    <video @loadeddata="videoLoadedLastlast" autoplay loop muted playsinline>
+                        <source src="video/bug-1.mov" type="video/mp4">
+                        <source src="video/bug-1.webm" type="video/webm">
+                    </video>
+                    <picture v-if="!isLoadingLastlast" class="division__new-ward-img">
                         <source type="image/webp" srcset="img/bug.webp">
-                        <img loading="lazy" src="img/bug-1.png" alt="">
+                        <img loading="lazy" src="img/bug.png" alt="">
+                    </picture>
+
+                    <picture class="division__new-ward-bg">
+                        <source type="image/webp" srcset="img/bg/bg.webp">
+                        <img loading="lazy" src="img/bg/bg.png" alt="">
                     </picture>
                 </div>
 
@@ -994,6 +1003,7 @@ export default {
             isLoadingTwelve: false,
             isLoadingThirteen: false,
             isLoadingLast: false,
+            isLoadingLastlast: false,
             map1: 1,
             map2: 2,
             idMap: 1,
@@ -1078,6 +1088,9 @@ export default {
         },
         videoLoadedLast() {
             this.isLoadingLast = true;
+        },
+        videoLoadedLastlast() {
+            this.isLoadingLastlast = true;
         },
         onResize() {
             this.isMobile = (window.innerWidth <= 768);
@@ -3138,16 +3151,43 @@ export default {
         &-img {
             position: absolute;
             display: block;
-            width: 22.375rem;
+            width: 13.5rem;
             height: auto;
-            top: 4.5rem;
-            left: -5rem;
+            top: 2.3rem;
+            left: 1rem;
             z-index: 1;
 
             @media (max-width: 768px) {
-                width: 35rem;
-                left: 23.5rem;
-                top: -13.5rem;
+                width: 28rem;
+                left: 26.5rem;
+                top: -25.5rem;
+            }
+        }
+
+        &-bg {
+            position: absolute;
+            width: 24rem;
+            left: -5rem;
+            top: 6rem;
+
+            @media (max-width: 768px) {
+                width: 57rem;
+                left: 9rem;
+                top: -27rem;
+            }
+        }
+
+        video {
+            position: absolute;
+            width: 31.5rem;
+            top: -12rem;
+            left: -8rem;
+            z-index: 1;
+
+            @media (max-width: 768px) {
+                width: 60rem;
+                left: 10.5rem;
+                top: -50.5rem;
             }
         }
     }
