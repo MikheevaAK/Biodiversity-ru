@@ -305,8 +305,7 @@
             </div>
 
             <picture>
-                <source type="image/webp" srcset="img/indicator-deer-mobile.webp">
-                <img loading="lazy" class="indicator__deer mb-100" src="img/indicator-deer-mobile.png">
+                <img loading="lazy" class="indicator__deer mb-100" src="img/indicator-deer-mobile.jpg">
             </picture>
 
             <BaseTextBlock title="Наблюдения во времени">
@@ -1464,7 +1463,12 @@ export default {
             bottom: 8rem;
 
             @media (max-width: 768px) {
-                display: none;
+                transform: scaleX(-1);
+                z-index: 2;
+                width: 58%;
+                left: 12rem;
+                bottom: -62rem;
+
             }
         }
 
@@ -1475,7 +1479,11 @@ export default {
             bottom: 8rem;
 
             @media (max-width: 768px) {
-                display: none;
+                width: 65%;
+                left: 10rem;
+                bottom: -68rem;
+                transform: scaleX(-1);
+                z-index: 2;
             }
         }
     }
