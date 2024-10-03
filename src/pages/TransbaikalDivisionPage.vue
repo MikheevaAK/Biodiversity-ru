@@ -435,7 +435,7 @@
 
                     <div class="collage__deep">
                         <video @loadeddata="videoLoadedFive" autoplay loop muted="true" playsinline="true">
-                            <source src="video/deep.mov" type="video/mp4">
+                            <source src="https://www.dropbox.com/scl/fi/4tslbfzbjtsnurn7hezct/deep.mov?rlkey=z89cqwhckp1rftnzguy217i1h&st=wwtu0u2q&dl=0" type="video/mp4">
                             <source src="video/deep.webm" type="video/webm">
                         </video>
                         <picture v-if="!isLoadingFive">
