@@ -730,7 +730,10 @@ export default {
             top: 20rem;
 
             @media (max-width: 768px) {
-                display: none;
+                transform: scaleX(-1);
+                width: 99rem;
+                left: 4rem;
+                top: 48rem;
             }
         }
 
