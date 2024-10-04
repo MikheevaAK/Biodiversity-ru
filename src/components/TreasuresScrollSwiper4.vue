@@ -2,6 +2,41 @@
     <div class="treasures-4-container__wrap">
         <div class="treasures-4-container">
 
+            <div class="wolverine">
+                <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
+                    <source
+                        src="https://www.dropbox.com/scl/fi/br44qbvhmudhotlnk4qmx/wolverine.mov?rlkey=xk8ount01hgne2lidyr54rfls&st=x8e7jbbn&dl=0"
+                        type="video/mp4">
+                    <source src="video/wolverine.webm" type="video/webm">
+                </video>
+
+                <picture v-if="!isLoadingOne">
+                    <source type="image/webp" srcset="img/wolverine.webp">
+                    <img loading="lazy" src="img/wolverine.png" alt="">
+                </picture>
+            </div>
+
+            <div class="crane">
+                <video @loadeddata="videoLoadedFour" autoplay loop muted="true" playsinline="true" preload="none">
+                    <source
+                        src="https://www.dropbox.com/scl/fi/gylayil752eyw0l9gz2is/crane.mov?rlkey=hemk4pq20dsuyhxsqdgz1kifo&st=ssesqmvw&dl=0"
+                        type="video/mp4">
+                    <source src="video/crane.webm" type="video/webm">
+                </video>
+
+                <picture v-if="!isLoadingFour">
+                    <source type="image/webp" srcset="img/crane.webp">
+                    <img loading="lazy" src="img/crane.png" alt="">
+                </picture>
+            </div>
+
+            <video class="columns" autoplay loop muted="true" playsinline="true">
+                <source
+                    src="https://www.dropbox.com/scl/fi/lbrr28qgrh7oo87vqg50l/columns.mov?rlkey=apl2jxye9g1afmv2q58g75sd0&st=pww80lyh&dl=0"
+                    type="video/mp4">
+                <source src="video/columns.webm" type="video/webm">
+            </video>
+
             <div class="treasures-4-item treasures-4-item_1">
                 <div class="treasures-3-item__title">Красавка</div>
                 <div class="treasures-3-item__descr">
@@ -33,9 +68,12 @@
             <div class="treasures-4-item treasures-4-item_4">
                 <div class="treasures-3-item__title">Корсак</div>
                 <div class="treasures-3-item__descr">
-                    Корсаки похожи на&nbsp;обыкновенных лис, но&nbsp;заметно мельче их&nbsp;и&nbsp;более социальны&nbsp;&mdash;
-                    нередко несколько животных селятся вместе. Во&nbsp;время опасности животное притворяется мёртвым, но&nbsp;при
-                    первой&nbsp;же возможности убегает. Корсак занесён в&nbsp;Красную книгу в&nbsp;статусе &laquo;вызывающий
+                    Корсаки похожи на&nbsp;обыкновенных лис, но&nbsp;заметно мельче их&nbsp;и&nbsp;более
+                    социальны&nbsp;&mdash;
+                    нередко несколько животных селятся вместе. Во&nbsp;время опасности животное притворяется мёртвым,
+                    но&nbsp;при
+                    первой&nbsp;же возможности убегает. Корсак занесён в&nbsp;Красную книгу в&nbsp;статусе
+                    &laquo;вызывающий
                     наименьшие опасения&raquo;.
                 </div>
             </div>
@@ -44,7 +82,8 @@
                 <div class="treasures-3-item__title">Кабарга</div>
                 <div class="treasures-3-item__descr">
                     У&nbsp;этого небольшого оленя нет рогов, зато у&nbsp;самцов из-под верхней губы выступают длинные
-                    саблевидные клыки. Их&nbsp;животные используют в&nbsp;качестве турнирного оружия в&nbsp;битвах за&nbsp;самку.
+                    саблевидные клыки. Их&nbsp;животные используют в&nbsp;качестве турнирного оружия в&nbsp;битвах
+                    за&nbsp;самку.
                     Известны случаи, когда во&nbsp;время таких поединков один из&nbsp;самцов кабарги смертельно ранил
                     соперника. Животное занесено в&nbsp;Красную книгу как уязвимый вид.
                 </div>
@@ -54,7 +93,8 @@
                 <div class="treasures-3-item__title">Росомаха</div>
                 <div class="treasures-3-item__descr">
                     Этот представитель вида куньих достигает размеров средней собаки. Росомаха известна своей
-                    свирепостью и&nbsp;бесстрашием: она может дать отпор даже животным, значительно превосходящим её&nbsp;по&nbsp;размерам.
+                    свирепостью и&nbsp;бесстрашием: она может дать отпор даже животным, значительно превосходящим
+                    её&nbsp;по&nbsp;размерам.
                     Загнанная в&nbsp;угол способна напасть и&nbsp;на&nbsp;человека. Занесена в&nbsp;Красную книгу.
                 </div>
             </div>
@@ -71,12 +111,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default {
+    data() {
+        return {
+            isLoadingOne: false,
+            isLoadingTwo: false,
+            isLoadingFour: false,
+        }
+    },
     mounted() {
         this.$nextTick(function () {
             this.scrollAnimation();
         })
     },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
+        videoLoadedFour() {
+            this.isLoadingFour = true;
+        },
         scrollAnimation() {
             if (window.innerWidth > 768) {
                 const panels = gsap.utils.toArray(".treasures-4-container .treasures-4-item");
@@ -128,6 +184,57 @@ export default {
                     width: 0;
                 }
             }
+        }
+    }
+
+    video {
+        position: absolute;
+        width: 100%;
+    }
+
+    .wolverine {
+        position: absolute;
+        top: 16.5rem;
+        left: 158rem;
+        width: 26rem;
+
+        video {
+            width: 145%;
+            top: -4.5rem;
+            left: -6rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .crane {
+        position: absolute;
+        top: 7.5rem;
+        left: 10rem;
+        width: 20rem;
+
+        video {
+            width: 190%;
+            transform: scaleX(-1);
+            top: -11.5rem;
+            left: -7rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .columns {
+        position: absolute;
+        top: 11.5rem;
+        left: 49rem;
+        width: 45rem;
+
+        @media (max-width: 768px) {
+            display: none;
         }
     }
 
