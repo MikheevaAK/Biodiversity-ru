@@ -40,6 +40,20 @@
                 </picture>
             </div>
 
+            <div class="sapsan">
+                <video @loadeddata="videoLoadedThree" autoplay loop muted playsinline preload="none">
+                    <source
+                        src="https://www.dropbox.com/scl/fi/vrryrs1jjqj68hsho0xop/sapsan.mov?rlkey=4kdmze87pgabpy44pjygwiybn&st=u28lqjyw&dl=0"
+                        type="video/mp4">
+                    <source src="video/sapsan.webm" type="video/webm">
+                </video>
+
+                <picture v-if="!isLoadingThree">
+                    <source type="image/webp" srcset="img/sapsan.webp">
+                    <img loading="lazy" src="img/sapsan.png" alt="">
+                </picture>
+            </div>
+
             <div class="treasures-3-item treasures-3-item_2">
                 <div class="treasures-3-item__title">Путоранский снежный баран</div>
                 <div class="treasures-3-item__descr">
@@ -110,6 +124,7 @@ export default {
         return {
             isLoadingOne: false,
             isLoadingTwo: false,
+            isLoadingThree: false,
         }
     },
     mounted() {
@@ -123,6 +138,9 @@ export default {
         },
         videoLoadedTwo() {
             this.isLoadingTwo = true;
+        },
+        videoLoadedThree() {
+            this.isLoadingThree = true;
         },
         scrollAnimation() {
             if (window.innerWidth > 768) {
@@ -212,6 +230,25 @@ export default {
             width: 275%;
             top: -20rem;
             left: -13rem;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .sapsan {
+        position: absolute;
+        top: 2rem;
+        left: 162rem;
+        width: 26rem;
+        transform: rotate(18deg);
+
+        video {
+            width: 200%;
+            top: -4rem;
+            transform: rotate(-34deg);
+            left: -8rem;
         }
 
         @media (max-width: 768px) {

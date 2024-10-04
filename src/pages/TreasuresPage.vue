@@ -227,8 +227,12 @@
                             в&nbsp;этом районе влияют ГЭС.
                         </p>
 
-                        <div class="position-info-bird">
-                            <img loading="lazy" src="img/curlew.png" alt="">
+                        <div class="position-info-bird position-info-bird-shrike">
+                            <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline preload="none">
+                                <source src="video/shrike.mov" type="video/mp4">
+                                <source src="video/shrike.webm" type="video/webm">
+                            </video>
+                            <img v-if="!isLoadingTwo" loading="lazy" src="img/curlew.png" alt="">
                             <div class="position-info-bird__descr">
                                 Самая высокая концентрация птиц отмечена на&nbsp;участках от&nbsp;Хевоскоски ГЭС
                                 до&nbsp;озера Ваггатем и&nbsp;от&nbsp;Мелькефосс ГЭС до&nbsp;озера Сальмиярви.
@@ -458,8 +462,12 @@
                             в&nbsp;природной среде и&nbsp;природных процессах заповедника не&nbsp;наблюдается,
                             а&nbsp;антропогенное воздействие на&nbsp;окружающую среду минимально.</p>
 
-                        <div class="position-info-bird">
-                            <img loading="lazy" src="img/curlew-2.png" alt="">
+                        <div class="position-info-bird position-info-bird-2">
+                            <video @loadeddata="videoLoadedThree" autoplay loop muted playsinline preload="none">
+                                <source src="video/curlew-2.mov" type="video/mp4">
+                                <source src="video/curlew-2.webm" type="video/webm">
+                            </video>
+                            <img v-if="!isLoadingThree" loading="lazy" src="img/curlew-2.png" alt="">
                             <div class="position-info__descr">
                                 <span>
                                     В&nbsp;минувшем году на&nbsp;территории Лапландского заповедника впервые заметили
@@ -1077,6 +1085,8 @@ export default {
     data() {
         return {
             isLoadingOne: false,
+            isLoadingTwo: false,
+            isLoadingThree: false,
             faq: {
                 question: "Помощь «Норникеля» 2017–2022 гг.",
                 isOpen: false,
@@ -1117,6 +1127,12 @@ export default {
     methods: {
         videoLoaded() {
             this.isLoadingOne = true;
+        },
+        videoLoadedTwo() {
+            this.isLoadingTwo = true;
+        },
+        videoLoadedThree() {
+            this.isLoadingThree = true;
         },
         scrollAnimation() {
             const collageItems = Array.from(document.querySelectorAll(".text-block__wrap"));
@@ -1274,6 +1290,21 @@ export default {
                 width: 22.94rem;
                 top: -13rem;
                 right: 8rem;
+            }
+        }
+
+        video {
+            position: absolute;
+            width: 11rem;
+            left: -2rem;
+            top: -8rem;
+        }
+
+        &-2 {
+            video {
+                width: 16rem;
+                left: -4rem;
+                top: -14rem;
             }
         }
 
