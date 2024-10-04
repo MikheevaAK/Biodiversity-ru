@@ -395,7 +395,9 @@
                     </div>
                     <div class="collage__merlin">
                         <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline preload="none">
-                            <source src="video/merlin.mov" type="video/mp4">
+                            <source
+                                src="https://www.dropbox.com/scl/fi/5t7f5k4mhrqcenfl64fso/merlin.mov?rlkey=rbohw9ys5ke9zj3xdccmgvtnu&st=o9cfm4pg&dl=0"
+                                type="video/mp4">
                             <source src="video/merlin.webm" type="video/webm">
                         </video>
 
@@ -1187,57 +1189,6 @@ export default {
                 },
             });
         },
-        // parallax() {
-        //     if (window.innerWidth > 768) {
-        //         gsap.fromTo(".collage__eagle", { y: 105 }, {
-        //             y: -20,
-        //             scrollTrigger: {
-        //                 trigger: ".collage",
-        //                 start: 'top 100%',
-        //                 end: '13%',
-        //                 // markers: true,
-        //                 scrub: true
-        //             },
-
-        //         });
-
-        //         gsap.fromTo(".collage__merlin", { y: 55 }, {
-        //             y: -15,
-        //             scrollTrigger: {
-        //                 trigger: ".collage",
-        //                 start: '25% 100%',
-        //                 end: '33%',
-        //                 // markers: true,
-        //                 scrub: true
-        //             },
-
-        //         });
-
-        //         gsap.fromTo(".collage__loach", { y: 50 }, {
-        //             y: -0,
-        //             scrollTrigger: {
-        //                 trigger: ".collage",
-        //                 start: '90% 100%',
-        //                 end: 'bottom',
-        //                 // markers: true,
-        //                 scrub: true
-        //             },
-
-        //         });
-
-        //         gsap.fromTo(".collage__loon", { y: 35 }, {
-        //             y: -10,
-        //             scrollTrigger: {
-        //                 trigger: ".collage",
-        //                 start: '80% 100%',
-        //                 end: '100%',
-        //                 // markers: true,
-        //                 scrub: true
-        //             },
-
-        //         });
-        //     }
-        // }
     }
 }
 </script>
@@ -1965,14 +1916,15 @@ export default {
             width: 38rem;
 
             video {
-                width: 280%;
-                left: -31rem;
-                top: -46rem;
+                width: 116%;
+                transform: scaleX(-1);
+                left: -2rem;
+                top: -5rem;
 
                 @media (max-width: 768px) {
-                    width: 270%;
-                    left: -45rem;
-                    top: -67rem;
+                    width: 117%;
+                    left: -3rem;
+                    top: -7rem;
                 }
             }
 

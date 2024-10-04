@@ -363,7 +363,9 @@
                         за&nbsp;границу.
                     </div>
                     <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
-                        <source src="video/merlin.mov" type="video/mp4">
+                        <source
+                            src="https://www.dropbox.com/scl/fi/5t7f5k4mhrqcenfl64fso/merlin.mov?rlkey=rbohw9ys5ke9zj3xdccmgvtnu&st=o9cfm4pg&dl=0"
+                            type="video/mp4">
                         <source src="video/merlin.webm" type="video/webm">
                     </video>
                     <picture v-if="!isLoadingOne">
@@ -1446,16 +1448,17 @@ export default {
         video {
             position: absolute;
             display: block;
-            width: 80rem;
+            width: 34rem;
             height: auto;
-            top: -38.3rem;
-            left: -30.366rem;
+            top: -7.3rem;
+            left: -8.366rem;
             z-index: 2;
+            transform: scaleX(-1);
 
             @media (max-width: 768px) {
-                width: 187.5rem;
-                left: -47.5rem;
-                top: -93.5rem;
+                width: 83.5rem;
+                left: 1.5rem;
+                top: -23.5rem;
             }
         }
     }

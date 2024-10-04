@@ -30,7 +30,9 @@
 
             <div class="merlin">
                 <video @loadeddata="videoLoadedTwo" autoplay loop muted playsinline preload="none">
-                    <source src="video/merlin.mov" type="video/mp4">
+                    <source
+                        src="https://www.dropbox.com/scl/fi/5t7f5k4mhrqcenfl64fso/merlin.mov?rlkey=rbohw9ys5ke9zj3xdccmgvtnu&st=o9cfm4pg&dl=0"
+                        type="video/mp4">
                     <source src="video/merlin.webm" type="video/webm">
                 </video>
 
@@ -227,9 +229,11 @@ export default {
         width: 17rem;
 
         video {
-            width: 275%;
-            top: -20rem;
-            left: -13rem;
+            width: 116%;
+            top: -2rem;
+            left: -1rem;
+            transform: scaleX(-1);
+
         }
 
         @media (max-width: 768px) {
