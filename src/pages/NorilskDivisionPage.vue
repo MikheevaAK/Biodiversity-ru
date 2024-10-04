@@ -512,7 +512,7 @@
 
                     <div class="collage__wolverine">
                         <video @loadeddata="videoLoadedNine" autoplay loop muted playsinline>
-                            <source src="video/wolverine.mov" type="video/mp4">
+                            <source src="https://www.dropbox.com/scl/fi/br44qbvhmudhotlnk4qmx/wolverine.mov?rlkey=xk8ount01hgne2lidyr54rfls&st=x8e7jbbn&dl=0" type="video/mp4">
                             <source src="video/wolverine.webm" type="video/webm">
                         </video>
 
