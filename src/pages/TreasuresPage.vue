@@ -850,12 +850,17 @@
                 </BaseTextBlock>
 
                 <div class="treasures__bear">
-                    <picture>
-                        <source media="(max-width: 768px)" type="image/webp" srcset="img/treasures-bear-mobile.webp">
-                        <source media="(max-width: 768px)" srcset="img/treasures-bear-mobile.png">
+                    <video @loadeddata="videoLoaded" autoplay loop muted playsinline>
+                        <source
+                            src="https://www.dropbox.com/scl/fi/6b39phymxy6yxg2t5kaqa/bear-1.mov?rlkey=ah29146b3a0w6by18g6ex50rd&st=24ggdbzg&dl=0"
+                            type="video/mp4">
+                        <source src="video/bear-1.webm" type="video/webm">
+                    </video>
+                    <picture v-if="!isLoadingOne">
                         <source type="image/webp" srcset="img/treasures-bear.webp">
                         <img loading="lazy" src="img/treasures-bear.png" alt="">
                     </picture>
+                    <img class="bg" loading="lazy" src="img/bg/bg-1.webp" alt="">
                     <div class="treasures__bear-title">
                         Белый медведь
                     </div>
@@ -1071,6 +1076,7 @@ export default {
     },
     data() {
         return {
+            isLoadingOne: false,
             faq: {
                 question: "Помощь «Норникеля» 2017–2022 гг.",
                 isOpen: false,
@@ -1109,6 +1115,9 @@ export default {
         },
     },
     methods: {
+        videoLoaded() {
+            this.isLoadingOne = true;
+        },
         scrollAnimation() {
             const collageItems = Array.from(document.querySelectorAll(".text-block__wrap"));
             collageItems.forEach((elem) => {
@@ -2008,6 +2017,18 @@ export default {
             }
         }
 
+        .bg {
+            position: absolute;
+            width: 32rem;
+            left: 1rem;
+            top: 18rem;
+            z-index: 1;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
         &-descr {
             font-size: 1.25rem;
             font-weight: 300;
@@ -2023,16 +2044,30 @@ export default {
         img {
             position: absolute;
             display: block;
-            width: 61.667rem;
-            height: 39.167rem;
-            top: 0rem;
-            left: -28.366rem;
+            width: 39rem;
+            top: 3rem;
+            left: -6rem;
+            z-index: 2;
 
             @media (max-width: 768px) {
                 width: 304px;
                 height: 170px;
                 margin-bottom: 40px;
                 position: static;
+            }
+        }
+
+        video {
+            position: absolute;
+            z-index: 2;
+            width: 42rem;
+            left: -7rem;
+            top: -6rem;
+
+            @media (max-width: 768px) {
+                width: 84rem;
+                left: 4rem;
+                top: -18rem;
             }
         }
 
