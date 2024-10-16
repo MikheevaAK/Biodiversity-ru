@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const http = require('http');
 
 const app = express();
 app.use(cors()); 
@@ -40,6 +41,11 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-app.listen(30011, () => {
-  console.log('Server is running on port 30011');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World!');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+  console.log('Server is running on http://127.0.0.1:3000/');
 });
