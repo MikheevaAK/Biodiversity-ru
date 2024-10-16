@@ -289,7 +289,7 @@ export default {
         },
         async submitForm() {
             try {
-                await axios.post('http://biodiversity-ru.vercel.app:3000/send-email', this.formData);
+                await axios.post('http://biodiversity-ru.vercel.app:30011/send-email', this.formData);
                 alert('Ваш вопрос отправлен! Спасибо!');
                 this.formData = {
                 name: '',
